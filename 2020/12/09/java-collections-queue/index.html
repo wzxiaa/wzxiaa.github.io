@@ -20,23 +20,24 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Java Collections Framework is one of the most essential Java API. The API provides implementations of standard data structure in Java-like linked list, set, stack, queue, hash table, priority queue an">
+  <meta name="description" content="Queue Interface A collection designed for holding elements prior to processing. Besides basic Collection operations, queues provide additional insertion, extraction, and inspection operations. Each of">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java Collections 集合工具类">
-<meta property="og:url" content="http://example.com/2020/12/09/java-collections/index.html">
+<meta property="og:title" content="Java Collections.Queue 集合工具类二(Queue)">
+<meta property="og:url" content="http://example.com/2020/12/09/java-collections-queue/index.html">
 <meta property="og:site_name" content="Wzxiaa&#39;s Blog">
-<meta property="og:description" content="Java Collections Framework is one of the most essential Java API. The API provides implementations of standard data structure in Java-like linked list, set, stack, queue, hash table, priority queue an">
+<meta property="og:description" content="Queue Interface A collection designed for holding elements prior to processing. Besides basic Collection operations, queues provide additional insertion, extraction, and inspection operations. Each of">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2020/12/09/java-collections/overview.jpg">
+<meta property="og:image" content="http://example.com/2020/12/09/java-collections-queue/overview.jpg">
 <meta property="article:published_time" content="2020-12-09T19:56:41.000Z">
-<meta property="article:modified_time" content="2020-12-09T23:31:50.810Z">
+<meta property="article:modified_time" content="2020-12-10T06:51:44.239Z">
 <meta property="article:author" content="Wenzong Xia">
 <meta property="article:tag" content="Java Basics">
 <meta property="article:tag" content="Collections">
+<meta property="article:tag" content="Queue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2020/12/09/java-collections/overview.jpg">
+<meta name="twitter:image" content="http://example.com/2020/12/09/java-collections-queue/overview.jpg">
 
-<link rel="canonical" href="http://example.com/2020/12/09/java-collections/">
+<link rel="canonical" href="http://example.com/2020/12/09/java-collections-queue/">
 
 
 <script id="page-configurations">
@@ -49,7 +50,7 @@
   };
 </script>
 
-  <title>Java Collections 集合工具类 | Wzxiaa's Blog</title>
+  <title>Java Collections.Queue 集合工具类二(Queue) | Wzxiaa's Blog</title>
   
 
 
@@ -167,7 +168,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/09/java-collections/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/09/java-collections-queue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.JPG">
@@ -180,7 +181,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Java Collections 集合工具类
+          Java Collections.Queue 集合工具类二(Queue)
         </h1>
 
         <div class="post-meta">
@@ -189,10 +190,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-12-09 14:56:41 / Modified: 18:31:50" itemprop="dateCreated datePublished" datetime="2020-12-09T14:56:41-05:00">2020-12-09</time>
+              <time title="Created: 2020-12-09 14:56:41" itemprop="dateCreated datePublished" datetime="2020-12-09T14:56:41-05:00">2020-12-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-10 01:51:44" itemprop="dateModified" datetime="2020-12-10T01:51:44-05:00">2020-12-10</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -214,11 +221,51 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Java Collections Framework is one of the most essential Java API. The API provides implementations of standard data structure in Java-like linked list, set, stack, queue, hash table, priority queue and others. A <code>collection</code> represents a single unit of objects. The <code>collection framework</code> represents a unified architecture for storing and manipulating a group of objects</p>
-<p><img src="/2020/12/09/java-collections/overview.jpg" alt="overview"></p>
+        <h2 id="Queue-Interface"><a href="#Queue-Interface" class="headerlink" title="Queue Interface"></a>Queue Interface</h2><p><img src="/2020/12/09/java-collections-queue/overview.jpg" alt="overview"></p>
+<p>A collection designed for holding elements prior to processing. Besides basic <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/7/docs/api/java/util/Collection.html"><code>Collection</code></a> operations, queues provide additional insertion, extraction, and inspection operations. Each of these methods exists in two forms: </p>
 <a id="more"></a>
 
-<h1 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h1>
+<ul>
+<li>one throws an exception if the operation fails</li>
+<li>the other returns a special value (either <code>null</code> or <code>false</code>, depending on the operation). </li>
+</ul>
+<p>The latter form of the insert operation is designed specifically for use with capacity-restricted <code>Queue</code> implementations; in most implementations, insert operations cannot fail.</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">throws Exception</th>
+<th align="center">Returns special value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">insert</td>
+<td align="center">add(e)</td>
+<td align="center">offer(e)</td>
+</tr>
+<tr>
+<td align="center">remove</td>
+<td align="center">remove()</td>
+<td align="center">poll()</td>
+</tr>
+<tr>
+<td align="center">examine</td>
+<td align="center">element()</td>
+<td align="center">peek()</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="PriorityQueue"><a href="#PriorityQueue" class="headerlink" title="PriorityQueue"></a><code>PriorityQueue</code></h3><h4 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h4><p>A priority queue is an Abstract Data Type that operates similar to a normal queue except that <strong><em>each element has a certain priority</em></strong>. The priority of the element in the priority queue determine the order in which elements are removed from the PQ.</p>
+<p>A <code>PriorityQueue</code> is used when the objects are supposed to be processed based on the priority. It is known that a <a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/queue-interface-java/">Queue</a> follows the <code>First-In-First-Out</code> algorithm. The PriorityQueue is based on the priority heap. The elements of the priority queue are ordered according to the natural ordering, or by a Comparator provided at queue construction time, depending on which constructor is used. It implements <code>Serializable</code>, <code>Iterable&lt;E&gt;</code>, <code>Collection&lt;E&gt;</code>,  <code> Queue</code> interfaces.</p>
+<p>Characteristics:</p>
+<ul>
+<li>Does not permit <code>null</code></li>
+<li>Can’t create PriorityQueue of objects that are non-comparable</li>
+<li>PriorityQueue are unbounded queues</li>
+<li>Not thread-safe, use <code>PriorityBlockingQueue</code> class for multi-threading</li>
+<li><strong><em>O(log(n))</em></strong> for <code>add</code> and <code>poll</code></li>
+</ul>
+
     </div>
 
     
@@ -229,6 +276,7 @@
           <div class="post-tags">
               <a href="/tags/Java-Basics/" rel="tag"># Java Basics</a>
               <a href="/tags/Collections/" rel="tag"># Collections</a>
+              <a href="/tags/Queue/" rel="tag"># Queue</a>
           </div>
 
         
@@ -240,7 +288,10 @@
     <a href="/2020/12/09/hello-world/" rel="prev" title="Build Blog with Hexo + Github + NexT">
       <i class="fa fa-chevron-left"></i> Build Blog with Hexo + Github + NexT
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/12/09/java-collections-list/" rel="next" title="Java Collections.List 集合工具类一(List)">
+      Java Collections.List 集合工具类一(List) <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -299,7 +350,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Collections"><span class="nav-number">1.</span> <span class="nav-text">Collections</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Queue-Interface"><span class="nav-number">1.</span> <span class="nav-text">Queue Interface</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PriorityQueue"><span class="nav-number">1.1.</span> <span class="nav-text">PriorityQueue</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Concept"><span class="nav-number">1.1.1.</span> <span class="nav-text">Concept</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -315,7 +366,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -328,7 +379,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
