@@ -28,12 +28,12 @@
 <meta property="og:description" content="Queue Interface A collection designed for holding elements prior to processing. Besides basic Collection operations, queues provide additional insertion, extraction, and inspection operations. Each of">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2020/12/09/java-collections-queue/overview.jpg">
-<meta property="og:image" content="http://example.com/2020/12/09/java-collections-queue/java-collections-queue/priorityqueue.jpg">
-<meta property="og:image" content="http://example.com/2020/12/09/java-collections-queue/java-collections-queue/insert.png">
-<meta property="og:image" content="http://example.com/2020/12/09/java-collections-queue/java-collections-queue/remove.png">
-<meta property="og:image" content="http://example.com/2020/12/09/java-collections-queue/java-collections-queue/removeat.png">
+<meta property="og:image" content="http://example.com/2020/12/09/java-collections-queue/priorityqueue.jpg">
+<meta property="og:image" content="http://example.com/2020/12/09/java-collections-queue/insert.png">
+<meta property="og:image" content="http://example.com/2020/12/09/java-collections-queue/remove.png">
+<meta property="og:image" content="http://example.com/2020/12/09/java-collections-queue/removeat.png">
 <meta property="article:published_time" content="2020-12-09T19:56:41.000Z">
-<meta property="article:modified_time" content="2020-12-10T20:24:57.816Z">
+<meta property="article:modified_time" content="2020-12-10T20:51:38.962Z">
 <meta property="article:author" content="Wzxiaa">
 <meta property="article:tag" content="Java Basics">
 <meta property="article:tag" content="Collections">
@@ -202,7 +202,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-10 15:24:57" itemprop="dateModified" datetime="2020-12-10T15:24:57-05:00">2020-12-10</time>
+                <time title="Modified: 2020-12-10 15:51:38" itemprop="dateModified" datetime="2020-12-10T15:51:38-05:00">2020-12-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,8 +261,7 @@
 <hr>
 <h3 id="PriorityQueue"><a href="#PriorityQueue" class="headerlink" title="PriorityQueue"></a><code>PriorityQueue</code></h3><h4 id="Basic-Concept"><a href="#Basic-Concept" class="headerlink" title="Basic Concept"></a>Basic Concept</h4><p>A priority queue is an Abstract Data Type that operates similar to a normal queue except that <strong><em>each element has a certain priority</em></strong>. The priority of the element in the priority queue determine the order in which elements are removed from the PQ.</p>
 <p>The most common implementation of a PQ is using <code>binary heap</code> (二叉小顶堆).</p>
-<img src="java-collections-queue/priorityqueue.jpg" alt="PQ" style="zoom:50%;" />
-
+<p><img src="/2020/12/09/java-collections-queue/priorityqueue.jpg" alt="overview"></p>
 <p>Indexing:</p>
 <ul>
 <li>Parent node index : i</li>
@@ -291,8 +290,7 @@
 </ul>
 <hr>
 <h5 id="Insert-Element-and-ShiftUp"><a href="#Insert-Element-and-ShiftUp" class="headerlink" title="Insert Element and ShiftUp"></a>Insert Element and ShiftUp</h5><p><code>add(e)</code> and <code>offer(e)</code> are equivalent except for the exception handling. add(e) throws exception while offer(e) returns null.</p>
-<img src="java-collections-queue/insert.png" alt="insert" style="zoom:40%;" />
-
+<p><img src="/2020/12/09/java-collections-queue/insert.png" alt="insert"></p>
 <p><code>Offer(e)</code> method implementation:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">offer</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (e == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException();</span><br><span class="line">    modCount++;</span><br><span class="line">    <span class="keyword">int</span> i = size;</span><br><span class="line">    <span class="keyword">if</span> (i &gt;= queue.length)</span><br><span class="line">        grow(i + <span class="number">1</span>);</span><br><span class="line">    size = i + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">0</span>)</span><br><span class="line">        queue[<span class="number">0</span>] = e;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        siftUp(i, e);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -308,8 +306,7 @@
 
 <hr>
 <h5 id="Remove-head-element"><a href="#Remove-head-element" class="headerlink" title="Remove head element"></a>Remove head element</h5><p><code>poll()</code> and <code>remove()</code> are equivalent except for the exception handling. <code>remove()</code> returns <code>null</code> while <code>poll()</code> throws exception.</p>
-<img src="java-collections-queue/remove.png" alt="removetop" style="zoom:40%;" />
-
+<p><img src="/2020/12/09/java-collections-queue/remove.png" alt="remove"></p>
 <p><code>poll()</code> method implementation:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">poll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (size == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">int</span> s = --size;</span><br><span class="line">    modCount++;</span><br><span class="line">    E result = (E) queue[<span class="number">0</span>];</span><br><span class="line">    E x = (E) queue[s];</span><br><span class="line">    queue[s] = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">if</span> (s != <span class="number">0</span>)</span><br><span class="line">        siftDown(<span class="number">0</span>, x);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -330,10 +327,7 @@
 </ul>
 </li>
 </ul>
-<img src="java-collections-queue/removeat.png" alt="removeat" style="zoom:50%;" />
-
-
-
+<p><img src="/2020/12/09/java-collections-queue/removeat.png" alt="removeat"></p>
 <p><code>remove(o)</code> implementation:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">remove</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = indexOf(o);</span><br><span class="line">    <span class="keyword">if</span> (i == -<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        removeAt(i);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> E <span class="title">removeAt</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// assert i &gt;= 0 &amp;&amp; i &lt; size;</span></span><br><span class="line">    modCount++;</span><br><span class="line">    <span class="keyword">int</span> s = --size;</span><br><span class="line">    <span class="keyword">if</span> (s == i) <span class="comment">// removed last element</span></span><br><span class="line">        queue[i] = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        E moved = (E) queue[s];</span><br><span class="line">        queue[s] = <span class="keyword">null</span>;</span><br><span class="line">        siftDown(i, moved);</span><br><span class="line">        <span class="keyword">if</span> (queue[i] == moved) &#123;</span><br><span class="line">            siftUp(i, moved);</span><br><span class="line">            <span class="keyword">if</span> (queue[i] != moved)</span><br><span class="line">                <span class="keyword">return</span> moved;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
