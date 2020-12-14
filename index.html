@@ -189,7 +189,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-13 23:55:04" itemprop="dateModified" datetime="2020-12-13T23:55:04-05:00">2020-12-13</time>
+                <time title="Modified: 2020-12-13 23:56:34" itemprop="dateModified" datetime="2020-12-13T23:56:34-05:00">2020-12-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -214,70 +214,14 @@
       
           <h2 id="Map-Interface-Overview"><a href="#Map-Interface-Overview" class="headerlink" title="Map Interface Overview"></a>Map Interface Overview</h2><p><img src="/2020/12/11/java-collections-map/overview.jpg" alt="overview"></p>
 <p>Java <code>Map</code> interface is one of the most important and most widely used API. A <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html"><code>Map</code></a> is an object that maps keys to values. A map cannot contain duplicate keys: Each key can map to at most one value. </p>
-<hr>
-<h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a><code>HashMap</code></h3><p>Java <code>HashMap</code> class implements the <code>Map</code> interface which allows to store key and value pair, where keys should be <strong><em>unique</em></strong>. </p>
-<ul>
-<li>Java <code>HashMap</code> allows null key and null values</li>
-<li>HashMap is not an ordered collection. <code>HashMap.keySet()</code> is not in order of their addition.</li>
-<li><code>HashMap</code> is <strong><em>not synchronized</em></strong>.</li>
-<li>HashMap stores entries into multiple singly linked lists, called buckets or bins. Default number of bins is <strong><em>16</em></strong> and it’s always in power of 2.</li>
-<li>HashMap is <strong><em>not thread safe</em></strong>, <code>ConcurrentHashMap</code> should be used or get synchronized map using <code>Collections.synchronizedMap()</code> method.</li>
-</ul>
-<hr>
-<h4 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h4><p>The architecture of <code>HashMap</code> is as follow:</p>
-<ul>
-<li>Internally, an array of <code>Node&lt;K,V&gt;</code> class is used to store the data, also known as a <strong>bucket</strong>.</li>
-<li><code>Node&lt;K,V&gt;</code> has four attributes:<ul>
-<li><code>int hash</code> , <code>K key</code>,  <code>V value</code>, <code>Node&lt;K,V&gt; next</code></li>
-</ul>
-</li>
-<li>Bucket has a <code>LinkedList</code> data structure to store multiple nodes.</li>
-<li><code>Array</code> is fast in terms of search with <strong><em>O(1)</em></strong> time, inserting and deleting is slower and has <strong><em>O(n)</em></strong> time. On the onter hand, <code>LinkedList</code> is fast for inserting and deleting while slow for searching. <code>HashMap</code> utilizes the different characteristics of the two data structures to enhance its performance.</li>
-</ul>
-<p><img src="/2020/12/11/java-collections-map/hashmap.png" alt="hashmap"></p>
-<hr>
-<h4 id="Initialization"><a href="#Initialization" class="headerlink" title="Initialization"></a>Initialization</h4><p>Upon intitialization, there are two attributes that are important:</p>
-<ul>
-<li>InitialCapacity:  It specified the initial capacity of the array (number of buckets). By default, it is set to <strong>16</strong>.</li>
-<li>loadFactor: It is a measure that decides when to increase the HashMap capacity to maintain the <code>get()</code> and <code>put()</code> operation complexity of <strong><em>O(1)</em></strong>. Be default. it is set to be <strong>0.75f</strong>. When number of buckets filled equals to initial Capacity*loadFactor, the size will be doubled.</li>
-</ul>
-<p>Constructors:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># initial capacity 16, load factor 0.75</span><br><span class="line">Map&lt;String, String&gt; map1 = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line"># specify initial capacity, load factor 0.75</span><br><span class="line">Map&lt;String, String&gt; map2 = <span class="keyword">new</span> HashMap&lt;&gt;(<span class="number">2</span>^<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"># specify initial capacity and load factor</span><br><span class="line">Map&lt;String, String&gt; map3 = <span class="keyword">new</span> HashMap&lt;&gt;(<span class="number">32</span>,<span class="number">0.80f</span>);</span><br><span class="line"></span><br><span class="line"># creates a Map having same mappings as the specified map with load </span><br><span class="line"># factor 0.75</span><br><span class="line">Map&lt;String,String&gt; map4 = <span class="keyword">new</span> HashMap&lt;&gt;(map1);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h4 id="Hashing-Mechanism"><a href="#Hashing-Mechanism" class="headerlink" title="Hashing Mechanism"></a>Hashing Mechanism</h4><p>Hashing is designed to solve the problem of needing to efficiently find or store an item in a collection. </p>
-<ul>
-<li><code>HashCode()</code> method : <ul>
-<li>It returns the memory reference of the object in integer form. Hash code for <code>null</code> object is <strong>0</strong>.</li>
-</ul>
-</li>
-<li><code>equals()</code> method:<ul>
-<li>It checks the equality of two objects. It can be overriden.</li>
-<li>If <code>equals()</code> method is overriden, it is mandatory to override the <code>hashCode()</code> method as well.</li>
-</ul>
-</li>
-</ul>
-<p>Generally, the <code>hashCode()</code> and <code>equals()</code> method should follow the following rules:</p>
-<ol>
-<li>If <code>obj1.equals(obj2)</code>, then <code>obj1.hashCode()==obj2.hashCode()</code> should always be true.</li>
-<li>If <code>obj1.hashCode()==obj2.hashCode()</code> is true, <code>obj1.equals(obj2)</code> does not have to be true.</li>
-</ol>
-<hr>
-<p>In <code>HashMap</code>, the hashing mechanism works in two steps:</p>
-<ul>
-<li>When an entry is added into the HashMap, it computes the hashcode on the key of the entry using <code>hashCode()</code>. ==&gt; <strong><em>first hash</em></strong></li>
-<li>The bitwise XOR operator is then used to spread the higher bits to  lowers. ==&gt; <strong><em>second hash</em></strong></li>
-</ul>
-<p>The implementations:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> h;</span><br><span class="line">    <span class="keyword">return</span> (key == <span class="keyword">null</span>) ? <span class="number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="number">16</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Based on the hash code computed, the index of the bucket for the enrty to be put into is then calculated:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index = (n-<span class="number">1</span>) &amp; hash <span class="comment">// n is the size of the bucket</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>A <strong>Hash Collision</strong> is a situation where <strong>two or more key objects produce the same final hash value</strong> and hence point to the same bucket location or array index. This scenario can occur because according to the <em>equals</em> and <em>hashCode</em> contract, <strong>two unequal objects in Java can have the same hash code</strong>. It can also happen because of the finite size of the underlying array, that is, before resizing. The smaller this array, the higher the chances of collision.</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/12/11/java-collections-map/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
