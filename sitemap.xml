@@ -4,19 +4,19 @@
   <url>
     <loc>http://example.com/2020/12/11/java-collections-map/</loc>
     
-    <lastmod>2020-12-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2020/12/11/java-collections-set/</loc>
-    
-    <lastmod>2020-12-11</lastmod>
+    <lastmod>2020-12-19</lastmod>
     
   </url>
   
   <url>
     <loc>http://example.com/2020/12/09/java-collections-queue/</loc>
+    
+    <lastmod>2020-12-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2020/12/11/java-collections-set/</loc>
     
     <lastmod>2020-12-11</lastmod>
     
@@ -53,7 +53,7 @@
 
   <url>
     <loc>http://example.com/</loc>
-    <lastmod>2020-12-14</lastmod>
+    <lastmod>2020-12-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -61,49 +61,49 @@
   
   <url>
     <loc>http://example.com/tags/Hexo/</loc>
-    <lastmod>2020-12-14</lastmod>
+    <lastmod>2020-12-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/Java-Basics/</loc>
-    <lastmod>2020-12-14</lastmod>
+    <lastmod>2020-12-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/Collections/</loc>
-    <lastmod>2020-12-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/List/</loc>
-    <lastmod>2020-12-14</lastmod>
+    <lastmod>2020-12-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/Map/</loc>
-    <lastmod>2020-12-14</lastmod>
+    <lastmod>2020-12-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/Queue/</loc>
-    <lastmod>2020-12-14</lastmod>
+    <lastmod>2020-12-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/Set/</loc>
-    <lastmod>2020-12-14</lastmod>
+    <lastmod>2020-12-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/List/</loc>
+    <lastmod>2020-12-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -112,7 +112,7 @@
   
   <url>
     <loc>http://example.com/categories/Java-Road-Map/</loc>
-    <lastmod>2020-12-14</lastmod>
+    <lastmod>2020-12-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
