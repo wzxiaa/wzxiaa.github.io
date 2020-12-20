@@ -81,14 +81,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/List/</loc>
+    <loc>http://example.com/tags/Map/</loc>
     <lastmod>2020-12-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/Queue/</loc>
+    <loc>http://example.com/tags/List/</loc>
     <lastmod>2020-12-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -102,7 +102,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Map/</loc>
+    <loc>http://example.com/tags/Queue/</loc>
     <lastmod>2020-12-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
