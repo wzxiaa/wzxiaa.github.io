@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://example.com/2020/12/11/java-collections-map/hashmap2.png">
 <meta property="og:image" content="http://example.com/2020/12/11/java-collections-map/linkedhashmap1.png">
 <meta property="article:published_time" content="2020-12-11T23:17:39.000Z">
-<meta property="article:modified_time" content="2020-12-20T08:33:49.943Z">
+<meta property="article:modified_time" content="2020-12-31T17:59:43.465Z">
 <meta property="article:author" content="Wzxiaa">
 <meta property="article:tag" content="Java Basics">
 <meta property="article:tag" content="Collections">
@@ -210,7 +210,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-20 03:33:49" itemprop="dateModified" datetime="2020-12-20T03:33:49-05:00">2020-12-20</time>
+                <time title="Modified: 2020-12-31 12:59:43" itemprop="dateModified" datetime="2020-12-31T12:59:43-05:00">2020-12-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -355,9 +355,16 @@
 
 <p>Two pointers: <strong><em>head</em></strong> and <strong><em>tail</em></strong> are added which enables itself to hook to the linked list. </p>
 <hr>
-<h4 id="Architecture-1"><a href="#Architecture-1" class="headerlink" title="Architecture"></a>Architecture</h4><p>The architecture is similar to that of HashMap:</p>
+<h4 id="Architecture-1"><a href="#Architecture-1" class="headerlink" title="Architecture"></a>Architecture</h4><ol>
+<li>If <code>accessOrder == false</code>, it will result in insertion order. </li>
+</ol>
+<p>The architecture is similar to that of HashMap:</p>
 <p><img src="/2020/12/11/java-collections-map/linkedhashmap1.png" alt="linkedhashmap1"></p>
 <p>The above diagram shows the structure of the LinkedHashMap when <code>accessOrder = false</code> which is the default setting. The insertion order is maintained through the doubly linkedlist. When a <code>put(K,V)</code> is called, the entry is put to the tail of the linkedlist. </p>
+<hr>
+<ol start="2">
+<li>If <code>accessOrder == true</code>, the it will result in access order. One of the important application of access order LinkedHashMap is building <strong><em>LRU</em></strong> cache. </li>
+</ol>
 
     </div>
 
