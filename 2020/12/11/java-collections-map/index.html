@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://example.com/2020/12/11/java-collections-map/hashmap2.png">
 <meta property="og:image" content="http://example.com/2020/12/11/java-collections-map/linkedhashmap1.png">
 <meta property="article:published_time" content="2020-12-11T23:17:39.000Z">
-<meta property="article:modified_time" content="2020-12-31T17:59:43.465Z">
+<meta property="article:modified_time" content="2021-01-03T06:39:49.423Z">
 <meta property="article:author" content="Wzxiaa">
 <meta property="article:tag" content="Java Basics">
 <meta property="article:tag" content="Collections">
@@ -210,7 +210,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-31 12:59:43" itemprop="dateModified" datetime="2020-12-31T12:59:43-05:00">2020-12-31</time>
+                <time title="Modified: 2021-01-03 01:39:49" itemprop="dateModified" datetime="2021-01-03T01:39:49-05:00">2021-01-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -304,8 +304,6 @@
 <p>Based on the hash code computed, the index of the bucket for the enrty to be put into is then calculated:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index = (n-<span class="number">1</span>) &amp; hash <span class="comment">// n is the size of the bucket</span></span><br></pre></td></tr></table></figure>
 
-
-
 <p>A <strong>Hash Collision</strong> is a situation where <strong>two or more key objects produce the same final hash value</strong> and hence point to the same bucket location or array index. This scenario can occur because according to the <em>equals</em> and <em>hashCode</em> contract, <strong>two unequal objects in Java can have the same hash code</strong>. It can also happen because of the finite size of the underlying array, that is, before resizing. The smaller this array, the higher the chances of collision.</p>
 <hr>
 <h4 id="HashMap-put-K-V-Method"><a href="#HashMap-put-K-V-Method" class="headerlink" title="HashMap put( K, V ) Method"></a>HashMap put( K, V ) Method</h4><p>The flow chart below demonstrates the execution logic of <code>put</code> method:</p>
@@ -322,8 +320,6 @@
 
 <p>Output:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;China&#x3D;Beijing, Korea&#x3D;Soul, Canada&#x3D;Montreal, America&#x3D;New York&#125;</span><br><span class="line">Beijing</span><br><span class="line">key: China; value: Beijing</span><br><span class="line">key: Korea; value: Soul</span><br><span class="line">key: Canada; value: Montreal</span><br><span class="line">key: America; value: New York</span><br><span class="line">value: Beijing</span><br><span class="line">value: Soul</span><br><span class="line">value: Montreal</span><br><span class="line">value: New York</span><br></pre></td></tr></table></figure>
-
-
 
 <hr>
 <h3 id="HashTable"><a href="#HashTable" class="headerlink" title="HashTable"></a><code>HashTable</code></h3><p>The <code>HashTable</code> class implements a hash table, which maps keys to values. Any non-null object can be used as a key or as a value. To successfully store and retrieve objects from a <code>HashTable</code>, the objects used as keys must implement the <code>hashCode()</code> method and <code>equals()</code> method. Generally, <code>HashTable</code> is vert similar to <code>HashMap</code> except for the following differenes:</p>
@@ -511,7 +507,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
