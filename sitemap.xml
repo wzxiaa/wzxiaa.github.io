@@ -81,7 +81,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Set/</loc>
+    <loc>http://example.com/tags/List/</loc>
     <lastmod>2021-01-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -95,7 +95,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/List/</loc>
+    <loc>http://example.com/tags/Set/</loc>
     <lastmod>2021-01-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
