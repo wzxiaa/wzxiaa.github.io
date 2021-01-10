@@ -140,6 +140,21 @@
       </tags>
   </entry>
   <entry>
+    <title>Java Collections.Set 集合工具类二(Set)</title>
+    <url>/2020/12/11/java-collections-set/</url>
+    <content><![CDATA[<h2 id="Set-Interface-Overview"><a href="#Set-Interface-Overview" class="headerlink" title="Set Interface Overview"></a>Set Interface Overview</h2><p><img src="/2020/12/11/java-collections-set/overview.jpg" alt="overview"></p>
+<p>A <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html"><code>Set</code></a> is a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html"><code>Collection</code></a> that cannot contain duplicate elements. It contains only methods inherit from <code>Collection</code> and adds the restriction that duplicate elements are prohibited. <code>Set</code> adds a strong contract on the behavior of the <code>equals</code> and <code>hashCode</code> operations. Two sets are equal if if they contain the same elements.</p>
+]]></content>
+      <categories>
+        <category>Java Road Map</category>
+      </categories>
+      <tags>
+        <tag>Java Basics</tag>
+        <tag>Collections</tag>
+        <tag>Set</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java Collections.Queue 集合工具类二(Queue)</title>
     <url>/2020/12/09/java-collections-queue/</url>
     <content><![CDATA[<h2 id="Queue-Interface-Overview"><a href="#Queue-Interface-Overview" class="headerlink" title="Queue Interface Overview"></a>Queue Interface Overview</h2><p><img src="/2020/12/09/java-collections-queue/overview.jpg" alt="overview"></p>
@@ -315,21 +330,6 @@
         <tag>Java Basics</tag>
         <tag>Collections</tag>
         <tag>Queue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java Collections.Set 集合工具类二(Set)</title>
-    <url>/2020/12/11/java-collections-set/</url>
-    <content><![CDATA[<h2 id="Set-Interface-Overview"><a href="#Set-Interface-Overview" class="headerlink" title="Set Interface Overview"></a>Set Interface Overview</h2><p><img src="/2020/12/11/java-collections-set/overview.jpg" alt="overview"></p>
-<p>A <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html"><code>Set</code></a> is a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html"><code>Collection</code></a> that cannot contain duplicate elements. It contains only methods inherit from <code>Collection</code> and adds the restriction that duplicate elements are prohibited. <code>Set</code> adds a strong contract on the behavior of the <code>equals</code> and <code>hashCode</code> operations. Two sets are equal if if they contain the same elements.</p>
-]]></content>
-      <categories>
-        <category>Java Road Map</category>
-      </categories>
-      <tags>
-        <tag>Java Basics</tag>
-        <tag>Collections</tag>
-        <tag>Set</tag>
       </tags>
   </entry>
   <entry>
