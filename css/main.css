@@ -271,7 +271,7 @@ kbd {
   border: 1px solid #ccc;
   border-radius: 0.2em;
   box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
-  color: #555;
+  color: #fc6423;
   font-family: inherit;
   padding: 0.1em 0.3em;
   white-space: nowrap;
@@ -394,9 +394,9 @@ code {
   font-family: consolas, Menlo, monospace, "PingFang SC", "Microsoft YaHei";
 }
 code {
-  background: #eee;
+  background: #fff2f3;
   border-radius: 3px;
-  color: #555;
+  color: #fc6423;
   padding: 2px 4px;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -1174,7 +1174,6 @@ pre .javascript .function {
 .sidebar {
   background: #222;
   bottom: 0;
-  box-shadow: inset 0 2px 6px #000;
   position: fixed;
   top: 0;
 }
@@ -1242,7 +1241,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff75e5;
+  background: #019541;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1557,33 +1556,16 @@ pre .javascript .function {
   transition-timing-function: ease-in-out;
 }
 .back-to-top {
-  background: #222;
-  bottom: -100px;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  left: 30px;
-  opacity: 1;
-  padding: 0 6px;
-  position: fixed;
-  transition-property: bottom;
-  z-index: 1300;
-  width: 24px;
-}
-.back-to-top span {
-  display: none;
-}
-.back-to-top:hover {
-  color: #87daff;
+  background: transparent;
+  margin: 8px -10px -20px;
+  opacity: 0;
 }
 .back-to-top.back-to-top-on {
-  bottom: 19px;
+  cursor: pointer;
+  opacity: 1;
 }
-@media (max-width: 991px) {
-  .back-to-top {
-    left: 20px;
-    opacity: 0.8;
-  }
+.back-to-top.back-to-top-on:hover {
+  opacity: 0.8;
 }
 .post-body {
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;

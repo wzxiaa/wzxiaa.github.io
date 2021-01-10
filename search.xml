@@ -1,95 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Java Collections.List 集合工具类一(List)</title>
-    <url>/2020/12/09/java-collections-list/</url>
-    <content><![CDATA[<p>Java Collections Framework is one of the most essential Java API. The API provides implementations of standard data structure in Java-like linked list, set, stack, queue, hash table, priority queue and others. A <code>collection</code> represents a single unit of objects. The <code>collection framework</code> represents a unified architecture for storing and manipulating a group of objects</p>
-<p><img src="/2020/12/09/java-collections-list/overview.jpg" alt="overview"></p>
-<a id="more"></a>
-
-<h1 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h1><h2 id="List-Interface"><a href="#List-Interface" class="headerlink" title="List Interface"></a>List Interface</h2><p>The <code>List</code> interface provides a way to store the ordered collection. It is a child interface of <a href="https://www.geeksforgeeks.org/collections-in-java-2/">Collection</a>. It is an ordered collection of objects in which duplicate values can be stored. Since List preserves the insertion order, it allows positional access and insertion of elements.</p>
-<h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a><code>ArrayList</code></h3><p>Resizable-array implementation of the <code>List</code> interface. Permits all elements, including <code>null</code>. <code>ArrayList</code> is <code>not synchronized</code>. ArrayList implements <code>RandomAccess</code>, <code>Cloneable</code>, <code>Serializable</code>. Its equivalent synchronized class in Java is <code>Vector</code>. </p>
-<p>Default capacity of ArrayList is 10. Once maximum capacity is reached, it increments as following:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">New capacity &#x3D; (current capacity * 3&#x2F;2) + 1</span><br></pre></td></tr></table></figure>
-
-<p>Upon every increment cycle, ArrayList increases it size by around <strong><em>50%</em></strong> of original.</p>
-<p>Dynamic expansion:</p>
-<ul>
-<li>Creates a bigger sized memory on heap memory.</li>
-<li>Copies the current memory elements to the new memory.</li>
-<li>New items added to the new memory.</li>
-<li>Delete the old memory.</li>
-</ul>
-<hr>
-<h3 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a><code>LinkedList</code></h3><p>Doubly-linked list implementation of the <code>List</code> and <code>Deque</code> interfaces. Implements all optional list operations, and permits all elements (including <code>null</code>). Operations that index into the list will traverse the list from the beginning or the end, whichever is closer to the specified index. <code>LinkedList</code> is <code>not synchronized</code>. LinkedList implements <code>Serializable</code>, <code>Cloneable</code>, <code>Deque&lt;E&gt;</code>, <code>Queue&lt;E&gt;</code>. </p>
-<p>Acts like a dynamic array:</p>
-<ul>
-<li>No need to specify the size upon initialization.</li>
-<li>Size increases dynamically (add, remove)</li>
-<li>Elements are not stored in continuous fashion.</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"># Add Elements</span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span>	# appends the specific element to the end of the list</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, E element)</span> # inserts the specified element at specified position</span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">addAll</span><span class="params">(Collection&lt;? extends E&gt;c)</span> # appends all of the elements to the end</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addFirst</span><span class="params">(E e)</span> # inserts the element at the beginning</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addLast</span><span class="params">(E e)</span> # appends the element at the end</span></span><br><span class="line"><span class="function">  </span></span><br><span class="line"><span class="function"># Search Elements</span></span><br><span class="line"><span class="function">Object <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span> # returns the element at specified position</span></span><br><span class="line"><span class="function">Object <span class="title">getFirst</span><span class="params">()</span> # returns the first element</span></span><br><span class="line"><span class="function">object <span class="title">getLast</span><span class="params">()</span> # returns the last element</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"># Update Elements</span></span><br><span class="line"><span class="function">E <span class="title">set</span><span class="params">(<span class="keyword">int</span> index, E element)</span> # replace the element at the specified position</span></span><br><span class="line"><span class="function">  </span></span><br><span class="line"><span class="function"># Remove Elements</span></span><br><span class="line"><span class="function">E <span class="title">remove</span><span class="params">()</span> # removes the element at the beginning</span></span><br><span class="line"><span class="function">E <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span> # removes the element at the specified position</span></span><br><span class="line"><span class="function">E <span class="title">removeFirst</span><span class="params">()</span> # removes and returns the first element</span></span><br><span class="line"><span class="function">E <span class="title">removeLast</span><span class="params">()</span> # removes and returns the last element</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"># Retrieve <span class="title">Elements</span> <span class="params">(does not remove)</span></span></span><br><span class="line"><span class="function">E <span class="title">peek</span><span class="params">()</span> # retrieves, but does not remove the first <span class="title">element</span> <span class="params">(head)</span></span></span><br><span class="line"><span class="function">E <span class="title">peekFirst</span><span class="params">()</span> # retrieves, but does not remove the first <span class="title">element</span> <span class="params">(returns <span class="keyword">null</span> <span class="keyword">if</span> empty)</span></span></span><br><span class="line"><span class="function">E <span class="title">peekLast</span><span class="params">()</span> # retrieves, but does not remove the last <span class="title">element</span> <span class="params">(returns <span class="keyword">null</span> <span class="keyword">if</span> empty)</span>  </span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"># Retrieve <span class="title">Elements</span> <span class="params">(and remove)</span></span></span><br><span class="line"><span class="function">E <span class="title">poll</span><span class="params">()</span> # retrieves, and removes the first <span class="title">element</span> <span class="params">(head)</span></span></span><br><span class="line"><span class="function">E <span class="title">pollFirst</span><span class="params">()</span> # retrieves and removes the first <span class="title">element</span> <span class="params">(returns <span class="keyword">null</span> <span class="keyword">if</span> empty)</span></span></span><br><span class="line"><span class="function">E <span class="title">pollLast</span><span class="params">()</span> # retrieves and removes the last <span class="title">element</span> <span class="params">(returns <span class="keyword">null</span> <span class="keyword">if</span> empty)</span>  </span></span><br><span class="line"><span class="function">  </span></span><br><span class="line"><span class="function"># Stack like operation</span></span><br><span class="line"><span class="function">E <span class="title">pop</span><span class="params">()</span> # pops an element from the stack represented by <span class="keyword">this</span> list</span></span><br><span class="line"><span class="function">E <span class="title">push</span><span class="params">(E e)</span> # pushes an element onto the stack represented by <span class="keyword">this</span> list</span></span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-<h3 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a><code>Vector</code></h3><p>The <strong>Vector</strong> class implements a growable array of objects. Vectors basically fall in legacy classes but now it is fully compatible with collections. It can grow or shrink as required. <code>Vector</code> is similar to <code>ArrayList</code> but it is <code>synchronized</code>. Rarely used in non-thread environment due to poor performance in add, search, delete and update operations.</p>
-<p>If the vector increment is not specified then it’s capacity will be doubled in every increment cycle.</p>
-<hr>
-<h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a><code>Stack</code></h3><p>The <code>Stack</code> class is based on the basic principle of <code>last-in-first-out</code>. In addition to the basic push and pop operations, the class provides three more functions of empty, search, and peek.</p>
-<p>A more complete and consistent set of LIFO stack operations is provided by the <a href="https://docs.oracle.com/javase/7/docs/api/java/util/Deque.html"><code>Deque</code></a> interface and its implementations,</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Deque&lt;Integer&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;Integer&gt;();</span><br></pre></td></tr></table></figure>
-
-<p>Generally, <code>Deque</code> is better as:</p>
-<ul>
-<li>in terms of object orient design as it is an interface whereas <code>Stack</code> is a class. Using <code>Deque</code>removes the dependency on concret <code>Stack</code> class. </li>
-<li><code>Stack</code> extends <code>Vector</code> and allows elements to be accessed by index. It is inconsistent with what general LIFO data structures should provide for.</li>
-<li>Performance. <code>Stack</code> is synchronized which could introduce performance overheads.</li>
-</ul>
-<hr>
-<h3 id="Performance-Comparison"><a href="#Performance-Comparison" class="headerlink" title="Performance Comparison"></a>Performance Comparison</h3><table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center">ArrayList</th>
-<th align="center">LinkedList</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">get(index)</td>
-<td align="center">O(1)</td>
-<td align="center">O(n)</td>
-</tr>
-<tr>
-<td align="center">add(E)</td>
-<td align="center">O(1)</td>
-<td align="center">O(1)</td>
-</tr>
-<tr>
-<td align="center">add(index, E)</td>
-<td align="center">O(n)</td>
-<td align="center">O(n)</td>
-</tr>
-<tr>
-<td align="center">remove(index)</td>
-<td align="center">O(n)</td>
-<td align="center">O(n)</td>
-</tr>
-</tbody></table>
-<p>Time complexity:</p>
-<p><code>ArrayList</code> is <strong><em>faster</em></strong> for <strong><em>accessing</em></strong> specific elements as it allows <code>RandomAccess</code>. Especially slow for deleting at middle.</p>
-<p><code>LinkedList</code> is <strong><em>faster</em></strong> for <strong><em>adding</em></strong> and <strong><em>deleting</em></strong> elements. It is <code>slow</code> to access an element.</p>
-]]></content>
-      <categories>
-        <category>Java Road Map</category>
-      </categories>
-      <tags>
-        <tag>Java Basics</tag>
-        <tag>Collections</tag>
-        <tag>List</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Build Blog with Hexo + Github + NexT</title>
     <url>/2020/12/09/hello-world/</url>
     <content><![CDATA[<p>This is my very first blog post on how to build a blog site powered by Github.io, Hexo and NexT. It won’t take even 10 minutes to set things up and running. It is fairly simple and easy to maintain. Let’s get started!</p>
@@ -333,6 +244,95 @@
       </tags>
   </entry>
   <entry>
+    <title>Java Collections.List 集合工具类一(List)</title>
+    <url>/2020/12/09/java-collections-list/</url>
+    <content><![CDATA[<p>Java Collections Framework is one of the most essential Java API. The API provides implementations of standard data structure in Java-like linked list, set, stack, queue, hash table, priority queue and others. A <code>collection</code> represents a single unit of objects. The <code>collection framework</code> represents a unified architecture for storing and manipulating a group of objects</p>
+<p><img src="/2020/12/09/java-collections-list/overview.jpg" alt="overview"></p>
+<a id="more"></a>
+
+<h1 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h1><h2 id="List-Interface"><a href="#List-Interface" class="headerlink" title="List Interface"></a>List Interface</h2><p>The <code>List</code> interface provides a way to store the ordered collection. It is a child interface of <a href="https://www.geeksforgeeks.org/collections-in-java-2/">Collection</a>. It is an ordered collection of objects in which duplicate values can be stored. Since List preserves the insertion order, it allows positional access and insertion of elements.</p>
+<h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a><code>ArrayList</code></h3><p>Resizable-array implementation of the <code>List</code> interface. Permits all elements, including <code>null</code>. <code>ArrayList</code> is <code>not synchronized</code>. ArrayList implements <code>RandomAccess</code>, <code>Cloneable</code>, <code>Serializable</code>. Its equivalent synchronized class in Java is <code>Vector</code>. </p>
+<p>Default capacity of ArrayList is 10. Once maximum capacity is reached, it increments as following:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">New capacity &#x3D; (current capacity * 3&#x2F;2) + 1</span><br></pre></td></tr></table></figure>
+
+<p>Upon every increment cycle, ArrayList increases it size by around <strong><em>50%</em></strong> of original.</p>
+<p>Dynamic expansion:</p>
+<ul>
+<li>Creates a bigger sized memory on heap memory.</li>
+<li>Copies the current memory elements to the new memory.</li>
+<li>New items added to the new memory.</li>
+<li>Delete the old memory.</li>
+</ul>
+<hr>
+<h3 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a><code>LinkedList</code></h3><p>Doubly-linked list implementation of the <code>List</code> and <code>Deque</code> interfaces. Implements all optional list operations, and permits all elements (including <code>null</code>). Operations that index into the list will traverse the list from the beginning or the end, whichever is closer to the specified index. <code>LinkedList</code> is <code>not synchronized</code>. LinkedList implements <code>Serializable</code>, <code>Cloneable</code>, <code>Deque&lt;E&gt;</code>, <code>Queue&lt;E&gt;</code>. </p>
+<p>Acts like a dynamic array:</p>
+<ul>
+<li>No need to specify the size upon initialization.</li>
+<li>Size increases dynamically (add, remove)</li>
+<li>Elements are not stored in continuous fashion.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"># Add Elements</span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span>	# appends the specific element to the end of the list</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, E element)</span> # inserts the specified element at specified position</span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">addAll</span><span class="params">(Collection&lt;? extends E&gt;c)</span> # appends all of the elements to the end</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addFirst</span><span class="params">(E e)</span> # inserts the element at the beginning</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addLast</span><span class="params">(E e)</span> # appends the element at the end</span></span><br><span class="line"><span class="function">  </span></span><br><span class="line"><span class="function"># Search Elements</span></span><br><span class="line"><span class="function">Object <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span> # returns the element at specified position</span></span><br><span class="line"><span class="function">Object <span class="title">getFirst</span><span class="params">()</span> # returns the first element</span></span><br><span class="line"><span class="function">object <span class="title">getLast</span><span class="params">()</span> # returns the last element</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"># Update Elements</span></span><br><span class="line"><span class="function">E <span class="title">set</span><span class="params">(<span class="keyword">int</span> index, E element)</span> # replace the element at the specified position</span></span><br><span class="line"><span class="function">  </span></span><br><span class="line"><span class="function"># Remove Elements</span></span><br><span class="line"><span class="function">E <span class="title">remove</span><span class="params">()</span> # removes the element at the beginning</span></span><br><span class="line"><span class="function">E <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span> # removes the element at the specified position</span></span><br><span class="line"><span class="function">E <span class="title">removeFirst</span><span class="params">()</span> # removes and returns the first element</span></span><br><span class="line"><span class="function">E <span class="title">removeLast</span><span class="params">()</span> # removes and returns the last element</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"># Retrieve <span class="title">Elements</span> <span class="params">(does not remove)</span></span></span><br><span class="line"><span class="function">E <span class="title">peek</span><span class="params">()</span> # retrieves, but does not remove the first <span class="title">element</span> <span class="params">(head)</span></span></span><br><span class="line"><span class="function">E <span class="title">peekFirst</span><span class="params">()</span> # retrieves, but does not remove the first <span class="title">element</span> <span class="params">(returns <span class="keyword">null</span> <span class="keyword">if</span> empty)</span></span></span><br><span class="line"><span class="function">E <span class="title">peekLast</span><span class="params">()</span> # retrieves, but does not remove the last <span class="title">element</span> <span class="params">(returns <span class="keyword">null</span> <span class="keyword">if</span> empty)</span>  </span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"># Retrieve <span class="title">Elements</span> <span class="params">(and remove)</span></span></span><br><span class="line"><span class="function">E <span class="title">poll</span><span class="params">()</span> # retrieves, and removes the first <span class="title">element</span> <span class="params">(head)</span></span></span><br><span class="line"><span class="function">E <span class="title">pollFirst</span><span class="params">()</span> # retrieves and removes the first <span class="title">element</span> <span class="params">(returns <span class="keyword">null</span> <span class="keyword">if</span> empty)</span></span></span><br><span class="line"><span class="function">E <span class="title">pollLast</span><span class="params">()</span> # retrieves and removes the last <span class="title">element</span> <span class="params">(returns <span class="keyword">null</span> <span class="keyword">if</span> empty)</span>  </span></span><br><span class="line"><span class="function">  </span></span><br><span class="line"><span class="function"># Stack like operation</span></span><br><span class="line"><span class="function">E <span class="title">pop</span><span class="params">()</span> # pops an element from the stack represented by <span class="keyword">this</span> list</span></span><br><span class="line"><span class="function">E <span class="title">push</span><span class="params">(E e)</span> # pushes an element onto the stack represented by <span class="keyword">this</span> list</span></span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h3 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a><code>Vector</code></h3><p>The <strong>Vector</strong> class implements a growable array of objects. Vectors basically fall in legacy classes but now it is fully compatible with collections. It can grow or shrink as required. <code>Vector</code> is similar to <code>ArrayList</code> but it is <code>synchronized</code>. Rarely used in non-thread environment due to poor performance in add, search, delete and update operations.</p>
+<p>If the vector increment is not specified then it’s capacity will be doubled in every increment cycle.</p>
+<hr>
+<h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a><code>Stack</code></h3><p>The <code>Stack</code> class is based on the basic principle of <code>last-in-first-out</code>. In addition to the basic push and pop operations, the class provides three more functions of empty, search, and peek.</p>
+<p>A more complete and consistent set of LIFO stack operations is provided by the <a href="https://docs.oracle.com/javase/7/docs/api/java/util/Deque.html"><code>Deque</code></a> interface and its implementations,</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Deque&lt;Integer&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;Integer&gt;();</span><br></pre></td></tr></table></figure>
+
+<p>Generally, <code>Deque</code> is better as:</p>
+<ul>
+<li>in terms of object orient design as it is an interface whereas <code>Stack</code> is a class. Using <code>Deque</code>removes the dependency on concret <code>Stack</code> class. </li>
+<li><code>Stack</code> extends <code>Vector</code> and allows elements to be accessed by index. It is inconsistent with what general LIFO data structures should provide for.</li>
+<li>Performance. <code>Stack</code> is synchronized which could introduce performance overheads.</li>
+</ul>
+<hr>
+<h3 id="Performance-Comparison"><a href="#Performance-Comparison" class="headerlink" title="Performance Comparison"></a>Performance Comparison</h3><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">ArrayList</th>
+<th align="center">LinkedList</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">get(index)</td>
+<td align="center">O(1)</td>
+<td align="center">O(n)</td>
+</tr>
+<tr>
+<td align="center">add(E)</td>
+<td align="center">O(1)</td>
+<td align="center">O(1)</td>
+</tr>
+<tr>
+<td align="center">add(index, E)</td>
+<td align="center">O(n)</td>
+<td align="center">O(n)</td>
+</tr>
+<tr>
+<td align="center">remove(index)</td>
+<td align="center">O(n)</td>
+<td align="center">O(n)</td>
+</tr>
+</tbody></table>
+<p>Time complexity:</p>
+<p><code>ArrayList</code> is <strong><em>faster</em></strong> for <strong><em>accessing</em></strong> specific elements as it allows <code>RandomAccess</code>. Especially slow for deleting at middle.</p>
+<p><code>LinkedList</code> is <strong><em>faster</em></strong> for <strong><em>adding</em></strong> and <strong><em>deleting</em></strong> elements. It is <code>slow</code> to access an element.</p>
+]]></content>
+      <categories>
+        <category>Java Road Map</category>
+      </categories>
+      <tags>
+        <tag>Java Basics</tag>
+        <tag>Collections</tag>
+        <tag>List</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java Map 集合工具类三(Map)</title>
     <url>/2020/12/11/java-collections-map/</url>
     <content><![CDATA[<h2 id="Map-Interface-Overview"><a href="#Map-Interface-Overview" class="headerlink" title="Map Interface Overview"></a>Map Interface Overview</h2><p><img src="/2020/12/11/java-collections-map/overview.jpg" alt="overview"></p>
@@ -470,7 +470,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">  <span class="comment">// Overriden by LinkedHashmap</span></span><br><span class="line"><span class="function">Node&lt;K,V&gt; <span class="title">newNode</span><span class="params">(<span class="keyword">int</span> hash, K key, V value, Node&lt;K,V&gt; e)</span> </span>&#123;</span><br><span class="line">      LinkedHashMap.Entry&lt;K,V&gt; p =</span><br><span class="line">          <span class="keyword">new</span> LinkedHashMap.Entry&lt;K,V&gt;(hash, key, value, e);</span><br><span class="line">      linkNodeLast(p);</span><br><span class="line">      <span class="keyword">return</span> p;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
 <p>The <code>linkNodeLast</code> method implementation:</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">  <span class="comment">// Implemented by LinkedHashmap</span></span><br><span class="line"><span class="comment">// link at the end of list</span></span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">linkNodeLast</span><span class="params">(LinkedHashMap.Entry&lt;K,V&gt; p)</span> </span>&#123;</span><br><span class="line">      LinkedHashMap.Entry&lt;K,V&gt; last = tail;</span><br><span class="line">      tail = p;</span><br><span class="line">      <span class="keyword">if</span> (last == <span class="keyword">null</span>)</span><br><span class="line">          head = p;</span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line">          p.before = last;</span><br><span class="line">          last.after = p;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Implemented by LinkedHashmap</span></span><br><span class="line"><span class="comment">// link at the end of list</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">linkNodeLast</span><span class="params">(LinkedHashMap.Entry&lt;K,V&gt; p)</span> </span>&#123;</span><br><span class="line">        LinkedHashMap.Entry&lt;K,V&gt; last = tail;</span><br><span class="line">        tail = p;</span><br><span class="line">        <span class="keyword">if</span> (last == <span class="keyword">null</span>)</span><br><span class="line">            head = p;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            p.before = last;</span><br><span class="line">            last.after = p;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
 <h4 id="LinkedHashMap-get-K-V-Method"><a href="#LinkedHashMap-get-K-V-Method" class="headerlink" title="LinkedHashMap.get( K, V ) Method"></a>LinkedHashMap.get( K, V ) Method</h4><p>The <code>LinkedHashMap</code> overrides the <code>afterNodeAccess</code> method. By default, the linkedhashmap maintain the order of the elements by the order of insertion. If <code>accessOrder</code> is specified to be <code>true</code> during initialization, the order will be preserved by the access order. This can be easily done by moving the node to the tail of the doubly linked list when <code>get</code> or <code>getOrDefault</code> or <code>replace</code> methods are invoked. <code>afterNodeAccess</code> method overriden by <code>LinkedHashMap</code> provides such functionality:</p>
