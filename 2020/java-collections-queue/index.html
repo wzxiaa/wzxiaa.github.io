@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"wzxiaa.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Queue Interface Overview Queue is a collection designed for holding elements prior to processing. Besides basic Collection operations, queues provide additional insertion, extraction, and inspection o">
+  <meta name="description" content="Queue Interface Overview  Queue is a collection designed for holding elements prior to processing. Besides basic Collection operations, queues provide additional insertion, extraction, and inspection">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java Collections.Queue 集合工具类二(Queue)">
 <meta property="og:url" content="https://wzxiaa.github.io/2020/java-collections-queue/">
 <meta property="og:site_name" content="Wzxiaa&#39;s Blog">
-<meta property="og:description" content="Queue Interface Overview Queue is a collection designed for holding elements prior to processing. Besides basic Collection operations, queues provide additional insertion, extraction, and inspection o">
+<meta property="og:description" content="Queue Interface Overview  Queue is a collection designed for holding elements prior to processing. Besides basic Collection operations, queues provide additional insertion, extraction, and inspection">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://wzxiaa.github.io/2020/java-collections-queue/overview.jpg">
 <meta property="og:image" content="https://wzxiaa.github.io/2020/java-collections-queue/priorityqueue.jpg">
@@ -101,7 +101,11 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -286,138 +290,144 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Queue-Interface-Overview"><a href="#Queue-Interface-Overview" class="headerlink" title="Queue Interface Overview"></a>Queue Interface Overview</h2><p><img src="/2020/java-collections-queue/overview.jpg" alt="overview"></p>
-<p><code>Queue</code> is a collection designed for holding elements prior to processing. Besides basic <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/7/docs/api/java/util/Collection.html"><code>Collection</code></a> operations, queues provide additional insertion, extraction, and inspection operations. Each of these methods exists in two forms: </p>
+        <h2 id="queue-interface-overview"><a class="markdownIt-Anchor" href="#queue-interface-overview"></a> Queue Interface Overview</h2>
+<p><img src="/2020/java-collections-queue/overview.jpg" alt="overview" /></p>
+<p><code>Queue</code> is a collection designed for holding elements prior to processing. Besides basic <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/7/docs/api/java/util/Collection.html"><code>Collection</code></a> operations, queues provide additional insertion, extraction, and inspection operations. Each of these methods exists in two forms:</p>
 <a id="more"></a>
-
 <ul>
 <li>one throws an exception if the operation fails</li>
-<li>the other returns a special value (either <code>null</code> or <code>false</code>, depending on the operation). </li>
+<li>the other returns a special value (either <code>null</code> or <code>false</code>, depending on the operation).</li>
 </ul>
 <p>The latter form of the insert operation is designed specifically for use with capacity-restricted <code>Queue</code> implementations; in most implementations, insert operations cannot fail.</p>
 <table>
 <thead>
 <tr>
-<th align="center"></th>
-<th align="center">throws Exception</th>
-<th align="center">Returns special value</th>
+<th style="text-align:center"></th>
+<th style="text-align:center">throws Exception</th>
+<th style="text-align:center">Returns special value</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">insert</td>
-<td align="center">add(e)</td>
-<td align="center">offer(e)</td>
+<tbody>
+<tr>
+<td style="text-align:center">insert</td>
+<td style="text-align:center">add(e)</td>
+<td style="text-align:center">offer(e)</td>
 </tr>
 <tr>
-<td align="center">remove</td>
-<td align="center">remove()</td>
-<td align="center">poll()</td>
+<td style="text-align:center">remove</td>
+<td style="text-align:center">remove()</td>
+<td style="text-align:center">poll()</td>
 </tr>
 <tr>
-<td align="center">examine</td>
-<td align="center">element()</td>
-<td align="center">peek()</td>
+<td style="text-align:center">examine</td>
+<td style="text-align:center">element()</td>
+<td style="text-align:center">peek()</td>
 </tr>
-</tbody></table>
-<hr>
-<h3 id="PriorityQueue"><a href="#PriorityQueue" class="headerlink" title="PriorityQueue"></a><code>PriorityQueue</code></h3><h4 id="Basic-Concept"><a href="#Basic-Concept" class="headerlink" title="Basic Concept"></a>Basic Concept</h4><p>A priority queue is an Abstract Data Type that operates similar to a normal queue except that <strong><em>each element has a certain priority</em></strong>. The priority of the element in the priority queue determine the order in which elements are removed from the PQ.</p>
+</tbody>
+</table>
+<hr />
+<h3 id="priorityqueue"><a class="markdownIt-Anchor" href="#priorityqueue"></a> <code>PriorityQueue</code></h3>
+<h4 id="basic-concept"><a class="markdownIt-Anchor" href="#basic-concept"></a> Basic Concept</h4>
+<p>A priority queue is an Abstract Data Type that operates similar to a normal queue except that <em><strong>each element has a certain priority</strong></em>. The priority of the element in the priority queue determine the order in which elements are removed from the PQ.</p>
 <p>The most common implementation of a PQ is using <code>binary heap</code> (二叉小顶堆).</p>
-<p><img src="/2020/java-collections-queue/priorityqueue.jpg" alt="overview"></p>
+<p><img src="/2020/java-collections-queue/priorityqueue.jpg" alt="overview" /></p>
 <p>Indexing:</p>
 <ul>
 <li>Parent node index : i</li>
 <li>Left child node index : 2i</li>
 <li>Right child node index : 2i + 1</li>
-<li>Parent node = ( node_index - 1 )  / 2 </li>
+<li>Parent node = ( node_index - 1 )  / 2</li>
 </ul>
-<hr>
+<hr />
 <p><strong>Strength</strong>:</p>
 <ul>
-<li>Quickly access the highest-priority item. Peek at the top item in <strong><em>O(1)</em></strong> while keeping other operations relatively cheap <strong><em>O(log(n))</em></strong>.</li>
+<li>Quickly access the highest-priority item. Peek at the top item in <em><strong>O(1)</strong></em> while keeping other operations relatively cheap ***O(log(n))***.</li>
 </ul>
 <p><strong>Weakness</strong>:</p>
 <ul>
-<li>Slow enqueues and dequeues. Both operations take <strong><em>O(log(n))</em></strong> time with priority queues. With normal FIFO queues, the operations are <strong><em>O(1)</em></strong> time.</li>
+<li>Slow enqueues and dequeues. Both operations take <em><strong>O(log(n))</strong></em> time with priority queues. With normal FIFO queues, the operations are <em><strong>O(1)</strong></em> time.</li>
 </ul>
-<hr>
-<h4 id="Java-API"><a href="#Java-API" class="headerlink" title="Java API"></a>Java API</h4><p>A <code>PriorityQueue</code> is used when the objects are supposed to be processed based on the priority. It is known that a <a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/queue-interface-java/">Queue</a> follows the <code>First-In-First-Out</code> algorithm. The PriorityQueue is based on the priority heap. The elements of the priority queue are ordered according to the natural ordering, or by a Comparator provided at queue construction time, depending on which constructor is used. It implements <code>Serializable</code>, <code>Iterable&lt;E&gt;</code>, <code>Collection&lt;E&gt;</code>,  <code> Queue</code> interfaces.</p>
+<hr />
+<h4 id="java-api"><a class="markdownIt-Anchor" href="#java-api"></a> Java API</h4>
+<p>A <code>PriorityQueue</code> is used when the objects are supposed to be processed based on the priority. It is known that a <a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/queue-interface-java/">Queue</a> follows the <code>First-In-First-Out</code> algorithm. The PriorityQueue is based on the priority heap. The elements of the priority queue are ordered according to the natural ordering, or by a Comparator provided at queue construction time, depending on which constructor is used. It implements <code>Serializable</code>, <code>Iterable&lt;E&gt;</code>, <code>Collection&lt;E&gt;</code>,  <code>Queue</code> interfaces.</p>
 <p>Characteristics:</p>
 <ul>
 <li>Does not permit <code>null</code></li>
 <li>Can’t create PriorityQueue of objects that are non-comparable</li>
 <li>PriorityQueue are unbounded queues</li>
 <li>Not thread-safe, use <code>PriorityBlockingQueue</code> class for multi-threading</li>
-<li><strong><em>O(log(n))</em></strong> for <code>add</code> and <code>poll</code></li>
+<li><em><strong>O(log(n))</strong></em> for <code>add</code> and <code>poll</code></li>
 </ul>
-<hr>
-<h5 id="Insert-Element-and-ShiftUp"><a href="#Insert-Element-and-ShiftUp" class="headerlink" title="Insert Element and ShiftUp"></a>Insert Element and ShiftUp</h5><p><code>add(e)</code> and <code>offer(e)</code> are equivalent except for the exception handling. add(e) throws exception while offer(e) returns null.</p>
-<p><img src="/2020/java-collections-queue/insert.png" alt="insert"></p>
+<hr />
+<h5 id="insert-element-and-shiftup"><a class="markdownIt-Anchor" href="#insert-element-and-shiftup"></a> Insert Element and ShiftUp</h5>
+<p><code>add(e)</code> and <code>offer(e)</code> are equivalent except for the exception handling. add(e) throws exception while offer(e) returns null.</p>
+<p><img src="/2020/java-collections-queue/insert.png" alt="insert" /></p>
 <p><code>Offer(e)</code> method implementation:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">offer</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (e == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException();</span><br><span class="line">    modCount++;</span><br><span class="line">    <span class="keyword">int</span> i = size;</span><br><span class="line">    <span class="keyword">if</span> (i &gt;= queue.length)</span><br><span class="line">        grow(i + <span class="number">1</span>);</span><br><span class="line">    size = i + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">0</span>)</span><br><span class="line">        queue[<span class="number">0</span>] = e;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        siftUp(i, e);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p><code>siftUp(i, e)</code> method implementation:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">siftUp</span><span class="params">(<span class="keyword">int</span> k, E x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (comparator != <span class="keyword">null</span>)</span><br><span class="line">        siftUpUsingComparator(k, x);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        siftUpComparable(k, x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SuppressWarnings(&quot;unchecked&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">siftUpComparable</span><span class="params">(<span class="keyword">int</span> k, E x)</span> </span>&#123;</span><br><span class="line">    Comparable&lt;? <span class="keyword">super</span> E&gt; key = (Comparable&lt;? <span class="keyword">super</span> E&gt;) x;</span><br><span class="line">    <span class="keyword">while</span> (k &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> parent = (k - <span class="number">1</span>) &gt;&gt;&gt; <span class="number">1</span>; <span class="comment">// parent node = (node-1)/2</span></span><br><span class="line">        Object e = queue[parent];</span><br><span class="line">        <span class="keyword">if</span> (key.compareTo((E) e) &gt;= <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        queue[k] = e;</span><br><span class="line">        k = parent;</span><br><span class="line">    &#125;</span><br><span class="line">    queue[k] = key;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h5 id="Peek-Element"><a href="#Peek-Element" class="headerlink" title="Peek/Element"></a>Peek/Element</h5><p><code>peek()</code> and <code>element()</code> are equivalent except for the exception handling. <code>peek()</code> returns <code>null</code> while <code>element()</code> throws exception.</p>
+<hr />
+<h5 id="peekelement"><a class="markdownIt-Anchor" href="#peekelement"></a> Peek/Element</h5>
+<p><code>peek()</code> and <code>element()</code> are equivalent except for the exception handling. <code>peek()</code> returns <code>null</code> while <code>element()</code> throws exception.</p>
 <p>peek() implementation:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">peek</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (size == <span class="number">0</span>) ? <span class="keyword">null</span> : (E) queue[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-<h5 id="Remove-head-element"><a href="#Remove-head-element" class="headerlink" title="Remove head element"></a>Remove head element</h5><p><code>poll()</code> and <code>remove()</code> are equivalent except for the exception handling. <code>remove()</code> returns <code>null</code> while <code>poll()</code> throws exception.</p>
-<p><img src="/2020/java-collections-queue/remove.png" alt="remove"></p>
+<hr />
+<h5 id="remove-head-element"><a class="markdownIt-Anchor" href="#remove-head-element"></a> Remove head element</h5>
+<p><code>poll()</code> and <code>remove()</code> are equivalent except for the exception handling. <code>remove()</code> returns <code>null</code> while <code>poll()</code> throws exception.</p>
+<p><img src="/2020/java-collections-queue/remove.png" alt="remove" /></p>
 <p><code>poll()</code> method implementation:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">poll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (size == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">int</span> s = --size;</span><br><span class="line">    modCount++;</span><br><span class="line">    E result = (E) queue[<span class="number">0</span>];</span><br><span class="line">    E x = (E) queue[s];</span><br><span class="line">    queue[s] = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">if</span> (s != <span class="number">0</span>)</span><br><span class="line">        siftDown(<span class="number">0</span>, x);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p><code>shiftDown(i, e)</code> method implementation:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">siftDown</span><span class="params">(<span class="keyword">int</span> k, E x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (comparator != <span class="keyword">null</span>)</span><br><span class="line">        siftDownUsingComparator(k, x);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        siftDownComparable(k, x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SuppressWarnings(&quot;unchecked&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">siftDownComparable</span><span class="params">(<span class="keyword">int</span> k, E x)</span> </span>&#123;</span><br><span class="line">    Comparable&lt;? <span class="keyword">super</span> E&gt; key = (Comparable&lt;? <span class="keyword">super</span> E&gt;)x;</span><br><span class="line">    <span class="keyword">int</span> half = size &gt;&gt;&gt; <span class="number">1</span>;        <span class="comment">// loop while a non-leaf</span></span><br><span class="line">    <span class="keyword">while</span> (k &lt; half) &#123;</span><br><span class="line">        <span class="keyword">int</span> child = (k &lt;&lt; <span class="number">1</span>) + <span class="number">1</span>; <span class="comment">// assume left child is least</span></span><br><span class="line">        Object c = queue[child];</span><br><span class="line">        <span class="keyword">int</span> right = child + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (right &lt; size &amp;&amp;</span><br><span class="line">            ((Comparable&lt;? <span class="keyword">super</span> E&gt;) c).compareTo((E) queue[right]) &gt; <span class="number">0</span>)</span><br><span class="line">            c = queue[child = right];</span><br><span class="line">        <span class="keyword">if</span> (key.compareTo((E) c) &lt;= <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        queue[k] = c;</span><br><span class="line">        k = child;</span><br><span class="line">    &#125;</span><br><span class="line">    queue[k] = key;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h5 id="Remove-specific-element"><a href="#Remove-specific-element" class="headerlink" title="Remove specific element"></a>Remove specific element</h5><p>There are two scenarios:</p>
+<hr />
+<h5 id="remove-specific-element"><a class="markdownIt-Anchor" href="#remove-specific-element"></a> Remove specific element</h5>
+<p>There are two scenarios:</p>
 <ul>
-<li><p>The element to be removed is the last element:</p>
+<li>
+<p>The element to be removed is the last element:</p>
 <ul>
 <li>Delete immediately without modifying the queue structure</li>
 </ul>
 </li>
-<li><p>The element is at somewhere else:</p>
+<li>
+<p>The element is at somewhere else:</p>
 <ul>
 <li>Apply shiftDown from the element to be removed with the last element in the queue.</li>
 </ul>
 </li>
 </ul>
-<p><img src="/2020/java-collections-queue/removeat.png" alt="removeat"></p>
+<p><img src="/2020/java-collections-queue/removeat.png" alt="removeat" /></p>
 <p><code>remove(o)</code> implementation:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">remove</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = indexOf(o);</span><br><span class="line">    <span class="keyword">if</span> (i == -<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        removeAt(i);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> E <span class="title">removeAt</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// assert i &gt;= 0 &amp;&amp; i &lt; size;</span></span><br><span class="line">    modCount++;</span><br><span class="line">    <span class="keyword">int</span> s = --size;</span><br><span class="line">    <span class="keyword">if</span> (s == i) <span class="comment">// removed last element</span></span><br><span class="line">        queue[i] = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        E moved = (E) queue[s];</span><br><span class="line">        queue[s] = <span class="keyword">null</span>;</span><br><span class="line">        siftDown(i, moved);</span><br><span class="line">        <span class="keyword">if</span> (queue[i] == moved) &#123;</span><br><span class="line">            siftUp(i, moved);</span><br><span class="line">            <span class="keyword">if</span> (queue[i] != moved)</span><br><span class="line">                <span class="keyword">return</span> moved;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="Deque-Interface"><a href="#Deque-Interface" class="headerlink" title="Deque Interface"></a>Deque Interface</h2><p><code>Deque</code> stands for <code>Double Ended Queue</code>, which means this is a queue that can be accessed by both ends, and therefore can be used with both <code>FIFO</code> and <code>LIFO</code> styles. By default, it organizes its element <code>LIFO</code> style, meaning that getting the first in the <code>Deque</code> would return the last that had been added.</p>
+<hr />
+<h2 id="deque-interface"><a class="markdownIt-Anchor" href="#deque-interface"></a> Deque Interface</h2>
+<p><code>Deque</code> stands for <code>Double Ended Queue</code>, which means this is a queue that can be accessed by both ends, and therefore can be used with both <code>FIFO</code> and <code>LIFO</code> styles. By default, it organizes its element <code>LIFO</code> style, meaning that getting the first in the <code>Deque</code> would return the last that had been added.</p>
 <p>The <code>Deque</code> interface has the following implementations:</p>
 <ul>
 <li>LinkedList</li>
 <li>ArrayDeque</li>
 </ul>
 <p>This interface defines methods to access the elements at both ends of the deque. Methods are provided to insert, remove, and examine the element. Each of these methods exists in two forms: one throws an exception if the operation fails, the other returns a special value (either <code>null</code> or <code>false</code>, depending on the operation). The latter form of the insert operation is designed specifically for use with capacity-restricted <code>Deque</code> implementations; in most implementations, insert operations cannot fail.</p>
-<p><img src="/2020/java-collections-queue/deque.png" alt="deque"></p>
+<p><img src="/2020/java-collections-queue/deque.png" alt="deque" /></p>
 <p>This interface extends the <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/7/docs/api/java/util/Queue.html"><code>Queue</code></a> interface. When a deque is used as a queue, FIFO (First-In-First-Out) behavior results. Elements are added at the end of the deque and removed from the beginning. The methods inherited from the <code>Queue</code> interface are precisely equivalent to <code>Deque</code> methods as indicated in the following table:</p>
-<p><img src="/2020/java-collections-queue/deque1.png" alt="deque1"></p>
+<p><img src="/2020/java-collections-queue/deque1.png" alt="deque1" /></p>
 <p>Deques can also be used as LIFO (Last-In-First-Out) stacks. This interface should be used in preference to the legacy <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/7/docs/api/java/util/Stack.html"><code>Stack</code></a> class. When a deque is used as a stack, elements are pushed and popped from the beginning of the deque. Stack methods are precisely equivalent to <code>Deque</code> methods as indicated in the table below:</p>
-<p><img src="/2020/java-collections-queue/deque2.png" alt="deque2"></p>
-<hr>
-<h3 id="ArrayDeque"><a href="#ArrayDeque" class="headerlink" title="ArrayDeque"></a><code>ArrayDeque</code></h3><p>Resizable-array implementation of the <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/util/Deque.html"><code>Deque</code></a> interface. Array deques have no capacity restrictions; they grow as necessary to support usage. They are not thread-safe. Null elements are prohibited.  Most <code>ArrayDeque</code> operations run in <code>amortized</code> constant time.</p>
+<p><img src="/2020/java-collections-queue/deque2.png" alt="deque2" /></p>
+<hr />
+<h3 id="arraydeque"><a class="markdownIt-Anchor" href="#arraydeque"></a> <code>ArrayDeque</code></h3>
+<p>Resizable-array implementation of the <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/util/Deque.html"><code>Deque</code></a> interface. Array deques have no capacity restrictions; they grow as necessary to support usage. They are not thread-safe. Null elements are prohibited.  Most <code>ArrayDeque</code> operations run in <code>amortized</code> constant time.</p>
 <ul>
-<li> faster than <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html"><code>Stack</code></a> when used as a stack, and</li>
-<li> faster than <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html"><code>LinkedList</code></a> when used as a queue.</li>
+<li>faster than <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html"><code>Stack</code></a> when used as a stack, and</li>
+<li>faster than <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html"><code>LinkedList</code></a> when used as a queue.</li>
 </ul>
 <p>Under the hood, <code>ArrayDeque</code> is backed by an array which doubles its size when it gets filled with an initial capacity of 16. Internally, It uses a <code>head</code> and <code>tail</code> as pointer to the index of the first and last elements in the array.</p>
 <ul>
 <li><strong>head</strong>: the index of the element at the head of queue (which is the element to be removed by <code>remove()</code> and <code>pop()</code> method)</li>
 <li><strong>tail</strong>: the index at which the next element would be added to the tail of the queue (via <code>addLast(E)</code>, <code>add(E)</code>, <code>push(E)</code>)</li>
 </ul>
-<hr>
-<h4 id="Use-ArrayDeque-as-Stack"><a href="#Use-ArrayDeque-as-Stack" class="headerlink" title="Use ArrayDeque as Stack"></a>Use <code>ArrayDeque</code> as <code>Stack</code></h4><p><img src="/2020/java-collections-queue/dequestack.png" alt="dequestack"></p>
+<hr />
+<h4 id="use-arraydeque-as-stack"><a class="markdownIt-Anchor" href="#use-arraydeque-as-stack"></a> Use <code>ArrayDeque</code> as <code>Stack</code></h4>
+<p><img src="/2020/java-collections-queue/dequestack.png" alt="dequestack" /></p>
 <p>Add an element using <code>push(e)</code> and remove the last element using <code>pop()</code></p>
 <p>Internally:</p>
 <ul>
@@ -425,14 +435,11 @@
 <li><code>pop()</code> calls <code>removeFirst()</code></li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">arraydeque_as_stack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Deque&lt;String&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">    stack.push(<span class="string">&quot;first&quot;</span>);</span><br><span class="line">    stack.push(<span class="string">&quot;second&quot;</span>);</span><br><span class="line">    stack.push(<span class="string">&quot;third&quot;</span>);</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">&quot;Initial Stack: &quot;</span> + stack);</span><br><span class="line">    stack.pop();</span><br><span class="line">    System.out.println(<span class="string">&quot;Stack after pop(): &quot;</span> + stack);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// equivalent in using addFirst and removeFirst</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">arraydeque_addFirst_removeFirst</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Deque&lt;String&gt; queue = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">    queue.addFirst(<span class="string">&quot;first&quot;</span>);</span><br><span class="line">    queue.addFirst(<span class="string">&quot;second&quot;</span>);</span><br><span class="line">    queue.addFirst(<span class="string">&quot;third&quot;</span>);</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">&quot;Initial queue addFirst(): &quot;</span> + queue);</span><br><span class="line">    queue.removeFirst();</span><br><span class="line">    System.out.println(<span class="string">&quot;queue after removeFirst(): &quot;</span> + queue);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>Output:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Initial Stack: [third, second, first]</span><br><span class="line">Stack after pop(): [second, first]</span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-<h4 id="Use-ArrayDeque-as-Queue"><a href="#Use-ArrayDeque-as-Queue" class="headerlink" title="Use ArrayDeque as Queue"></a>Use <code>ArrayDeque</code> as <code>Queue</code></h4><p><img src="/2020/java-collections-queue/dequequeue.png" alt="dequequeue"></p>
+<hr />
+<h4 id="use-arraydeque-as-queue"><a class="markdownIt-Anchor" href="#use-arraydeque-as-queue"></a> Use <code>ArrayDeque</code> as <code>Queue</code></h4>
+<p><img src="/2020/java-collections-queue/dequequeue.png" alt="dequequeue" /></p>
 <p>Add an element using <code>offer(e)</code> and remove the first element using <code>poll()</code></p>
 <p>Internally:</p>
 <ul>
@@ -440,17 +447,14 @@
 <li><code>poll()</code> calls <code>pollFirst()</code></li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">arraydeque_as_queue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      Deque&lt;String&gt; queue = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">      queue.offer(<span class="string">&quot;first&quot;</span>);</span><br><span class="line">      queue.offer(<span class="string">&quot;second&quot;</span>);</span><br><span class="line">      queue.offer(<span class="string">&quot;third&quot;</span>);</span><br><span class="line"></span><br><span class="line">      System.out.println(<span class="string">&quot;Initial queue: &quot;</span> + queue);</span><br><span class="line">      queue.poll();</span><br><span class="line">      System.out.println(<span class="string">&quot;queue after pop(): &quot;</span> + queue);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// equivalent in using addLast and removeFirst</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">arraydeque_addLast_removeFirst</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      Deque&lt;String&gt; queue = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">      queue.addLast(<span class="string">&quot;first&quot;</span>);</span><br><span class="line">      queue.addLast(<span class="string">&quot;second&quot;</span>);</span><br><span class="line">      queue.addLast(<span class="string">&quot;third&quot;</span>);</span><br><span class="line"></span><br><span class="line">      System.out.println(<span class="string">&quot;Initial queue addLast(): &quot;</span> + queue);</span><br><span class="line">      queue.removeFirst();</span><br><span class="line">      System.out.println(<span class="string">&quot;queue after removeFirst(): &quot;</span> + queue);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
 <p>Ouput:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Initial queue: [first, second, third]</span><br><span class="line">queue after pop(): [second, third]</span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-<h4 id="Capacity-Expansion"><a href="#Capacity-Expansion" class="headerlink" title="Capacity Expansion"></a>Capacity Expansion</h4><p>Everytime an element is added into the<code>ArrayDeque</code>, it compares the <code>head</code> pointer and the <code>tail</code> pointer. If they are equal, it indicates that the array is full.</p>
-<p><img src="/2020/java-collections-queue/capacity1.png" alt="capacity1"></p>
+<hr />
+<h4 id="capacity-expansion"><a class="markdownIt-Anchor" href="#capacity-expansion"></a> Capacity Expansion</h4>
+<p>Everytime an element is added into the<code>ArrayDeque</code>, it compares the <code>head</code> pointer and the <code>tail</code> pointer. If they are equal, it indicates that the array is full.</p>
+<p><img src="/2020/java-collections-queue/capacity1.png" alt="capacity1" /></p>
 <p>Then <code>doubleCapacity()</code> will be called:</p>
-<p><img src="/2020/java-collections-queue/capacity2.png" alt="capacity2"></p>
+<p><img src="/2020/java-collections-queue/capacity2.png" alt="capacity2" /></p>
 
     </div>
 
@@ -536,7 +540,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Queue-Interface-Overview"><span class="nav-number">1.</span> <span class="nav-text">Queue Interface Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PriorityQueue"><span class="nav-number">1.1.</span> <span class="nav-text">PriorityQueue</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic-Concept"><span class="nav-number">1.1.1.</span> <span class="nav-text">Basic Concept</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-API"><span class="nav-number">1.1.2.</span> <span class="nav-text">Java API</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Insert-Element-and-ShiftUp"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">Insert Element and ShiftUp</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Peek-Element"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">Peek&#x2F;Element</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Remove-head-element"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">Remove head element</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Remove-specific-element"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">Remove specific element</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deque-Interface"><span class="nav-number">2.</span> <span class="nav-text">Deque Interface</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayDeque"><span class="nav-number">2.1.</span> <span class="nav-text">ArrayDeque</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Use-ArrayDeque-as-Stack"><span class="nav-number">2.1.1.</span> <span class="nav-text">Use ArrayDeque as Stack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Use-ArrayDeque-as-Queue"><span class="nav-number">2.1.2.</span> <span class="nav-text">Use ArrayDeque as Queue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Capacity-Expansion"><span class="nav-number">2.1.3.</span> <span class="nav-text">Capacity Expansion</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#queue-interface-overview"><span class="nav-number">1.</span> <span class="nav-text"> Queue Interface Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#priorityqueue"><span class="nav-number">1.1.</span> <span class="nav-text"> PriorityQueue</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#basic-concept"><span class="nav-number">1.1.1.</span> <span class="nav-text"> Basic Concept</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java-api"><span class="nav-number">1.1.2.</span> <span class="nav-text"> Java API</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#insert-element-and-shiftup"><span class="nav-number">1.1.2.1.</span> <span class="nav-text"> Insert Element and ShiftUp</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#peekelement"><span class="nav-number">1.1.2.2.</span> <span class="nav-text"> Peek&#x2F;Element</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#remove-head-element"><span class="nav-number">1.1.2.3.</span> <span class="nav-text"> Remove head element</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#remove-specific-element"><span class="nav-number">1.1.2.4.</span> <span class="nav-text"> Remove specific element</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#deque-interface"><span class="nav-number">2.</span> <span class="nav-text"> Deque Interface</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#arraydeque"><span class="nav-number">2.1.</span> <span class="nav-text"> ArrayDeque</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#use-arraydeque-as-stack"><span class="nav-number">2.1.1.</span> <span class="nav-text"> Use ArrayDeque as Stack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#use-arraydeque-as-queue"><span class="nav-number">2.1.2.</span> <span class="nav-text"> Use ArrayDeque as Queue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#capacity-expansion"><span class="nav-number">2.1.3.</span> <span class="nav-text"> Capacity Expansion</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -613,12 +617,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">34k</span>
+    <span title="Symbols count total">37k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">31 mins.</span>
+    <span title="Reading time total">33 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>

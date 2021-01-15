@@ -28,7 +28,7 @@
 <meta property="og:description" content="JavaScript is a dynamic programming language which means that operations otherwise done at the compile-time can be done at run-time. JavaScript is a loosely typed language as well. Variables in JavaSc">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-15T03:38:20.000Z">
-<meta property="article:modified_time" content="2021-01-15T04:35:49.300Z">
+<meta property="article:modified_time" content="2021-01-15T23:54:40.645Z">
 <meta property="article:author" content="Wzxiaa">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -86,7 +86,11 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -219,10 +223,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-01-14 22:38:20 / Modified: 23:35:49" itemprop="dateCreated datePublished" datetime="2021-01-14T22:38:20-05:00">2021-01-14</time>
+              <time title="Created: 2021-01-14 22:38:20" itemprop="dateCreated datePublished" datetime="2021-01-14T22:38:20-05:00">2021-01-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-15 18:54:40" itemprop="dateModified" datetime="2021-01-15T18:54:40-05:00">2021-01-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -246,14 +256,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>269</span>
+              <span>3k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>3 mins.</span>
             </span>
 
         </div>
@@ -265,7 +275,67 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>JavaScript is a <strong><em>dynamic programming language</em></strong> which means that operations otherwise done at the compile-time can be done at run-time. JavaScript is a <strong><em>loosely typed</em></strong> language as well. Variables in JavaScript are not directly associated with any particular value type and any variables can be assigned values of <strong><em>all types</em></strong>. </p>
+        <p>JavaScript is a <em><strong>dynamic programming language</strong></em> which means that operations otherwise done at the compile-time can be done at run-time. JavaScript is a <em><strong>loosely typed</strong></em> language as well. Variables in JavaScript are not directly associated with any particular value type and any variables can be assigned values of <em><strong>all types</strong></em>.</p>
+<p>In JavaScript, a variable may store two types of value: <code>primitive</code> and <code>reference</code>.</p>
+<ul>
+<li>Primitive Data Types characteristics:
+<ul>
+<li>Stored directly in the location the variable accesses</li>
+<li>Size of the primitive value is fixed and stored on the stack</li>
+<li>Accessed by value (manipulate the actual value stored in the variable)</li>
+</ul>
+</li>
+<li>Reference Data Types characteristics:
+<ul>
+<li>Accessed by reference</li>
+<li>Size of reference value is dynamic and objects are stored on the heap</li>
+<li>A pointer to a location in memory</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h3 id="primitives"><a class="markdownIt-Anchor" href="#primitives"></a> Primitives</h3>
+<p><strong><code>Number</code></strong> for numbers of any kind: integer or floating-point. Integers are limited by <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>±</mo><mo stretchy="false">(</mo><msup><mn>2</mn><mn>53</mn></msup><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\pm (2^{53}-1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord">±</span><span class="mopen">(</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">5</span><span class="mord mtight">3</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>. Special number includes: <code>Infinity</code>, <code>-Infinity</code> and <code>NaN</code>.</p>
+<p><strong><code>BigInt</code></strong> is for integer number of arbitrary length</p>
+<p><strong><code>String</code></strong> for strings. A String may have zero or more characters, there’s no separate single character type.</p>
+<ol>
+<li>Double quotes : <code>&quot;Hello&quot;</code></li>
+<li>Single quotes : <code>'Hello'</code></li>
+<li>Backticks :  <code>Hellow</code></li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">&quot;John&quot;</span>;</span><br><span class="line">alert(<span class="string">`Hello, <span class="subst">$&#123;name&#125;</span>!`</span> ); <span class="comment">// Hellow, John!</span></span><br></pre></td></tr></table></figure>
+<p><strong><code>Boolean</code></strong> for <code>true</code> or <code>false</code></p>
+<p><strong><code>null</code></strong> for unknown values - a standalone type that has a single value <code>null</code>.</p>
+<p><strong><code>undefined</code></strong> for unassigned values - a standalone type that has a single value. If a variable is declared, but not assigned, then its value is undefined.</p>
+<p><strong><code>Symbol</code></strong> is used to create unique identifiers for objects.</p>
+<h3 id="reference"><a class="markdownIt-Anchor" href="#reference"></a> Reference</h3>
+<p><strong><code>Object</code></strong> used to store collections of data and more complex entities. It can includes:</p>
+<ul>
+<li>Arrays, Object literals, Functions, Dates, … etc</li>
+</ul>
+<hr />
+<h3 id="type-conversion"><a class="markdownIt-Anchor" href="#type-conversion"></a> Type Conversion</h3>
+<p>Convert Number to String:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">val = <span class="built_in">String</span>(<span class="number">555</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(val); <span class="comment">// 555</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> val) <span class="comment">// string</span></span><br><span class="line"><span class="built_in">console</span>.log(val.length) <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<p>Convert Boolean to String:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">val = <span class="built_in">String</span>(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(val); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> val) <span class="comment">// string</span></span><br><span class="line"><span class="built_in">console</span>.log(val.length) <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
+<p>Convert Date to String:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">val = <span class="built_in">String</span>(<span class="keyword">new</span> <span class="built_in">Date</span>());</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(val); <span class="comment">// Fri Jan 15 2021 13:40:08 GMT-0500 (Eastern Standard Time)</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> val) <span class="comment">// string</span></span><br><span class="line"><span class="built_in">console</span>.log(val.length) <span class="comment">// 57</span></span><br></pre></td></tr></table></figure>
+<p>Convert Array to String:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">val = <span class="built_in">String</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(val); <span class="comment">// 1,2,3,4,5</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> val) <span class="comment">// string</span></span><br><span class="line"><span class="built_in">console</span>.log(val.length) <span class="comment">// 9</span></span><br></pre></td></tr></table></figure>
+<p><em><strong>toString()</strong></em> method:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">val = (<span class="number">5</span>).toString();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(val); <span class="comment">// 5</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> val) <span class="comment">// string</span></span><br><span class="line"><span class="built_in">console</span>.log(val.length) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<hr />
+<p>Convert String to Number:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">val = <span class="built_in">Number</span>(<span class="string">&#x27;5&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(val); <span class="comment">// 5</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> val) <span class="comment">// number</span></span><br><span class="line"><span class="built_in">console</span>.log(val.toFixed()) <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+<p>Convert Boolean to Number:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">val = <span class="built_in">Number</span>(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(val); <span class="comment">// 1 for true, 0 for false and null</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> val) <span class="comment">// number</span></span><br><span class="line"><span class="built_in">console</span>.log(val.toFixed()) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>Convert Date to Number:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">val = <span class="built_in">Number</span>(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(val); <span class="comment">// 1 for true, 0 for false and null</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> val) <span class="comment">// number</span></span><br><span class="line"><span class="built_in">console</span>.log(val.toFixed()) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>Convert Non-numeric value to Number:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val = <span class="built_in">Number</span>(<span class="keyword">new</span> <span class="built_in">Date</span>());</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(val); <span class="comment">// 1610736853895</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> val) <span class="comment">// number</span></span><br></pre></td></tr></table></figure>
+<p><em><strong>parseInt()</strong></em> and <em><strong>parseFloat()</strong></em> method:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">val = <span class="built_in">parseInt</span>(<span class="string">&#x27;100.30&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(val); <span class="comment">// 100</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> val) <span class="comment">// number</span></span><br><span class="line"><span class="built_in">console</span>.log(val.toFixed()) <span class="comment">// 100</span></span><br><span class="line"></span><br><span class="line">val = <span class="built_in">parseFloat</span>(<span class="string">&#x27;100.31&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(val); <span class="comment">// 100.31</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> val) <span class="comment">// number</span></span><br><span class="line"><span class="built_in">console</span>.log(val.toFixed()) <span class="comment">// 100.3100</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -346,6 +416,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#primitives"><span class="nav-number">1.</span> <span class="nav-text"> Primitives</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reference"><span class="nav-number">2.</span> <span class="nav-text"> Reference</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#type-conversion"><span class="nav-number">3.</span> <span class="nav-text"> Type Conversion</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -422,12 +493,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">34k</span>
+    <span title="Symbols count total">37k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">31 mins.</span>
+    <span title="Reading time total">33 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>

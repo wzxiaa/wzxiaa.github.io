@@ -67,6 +67,13 @@
 
   
   <url>
+    <loc>https://wzxiaa.github.io/tags/Hexo/</loc>
+    <lastmod>2021-01-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wzxiaa.github.io/tags/Java-Basics/</loc>
     <lastmod>2021-01-15</lastmod>
     <changefreq>daily</changefreq>
@@ -88,14 +95,7 @@
   </url>
   
   <url>
-    <loc>https://wzxiaa.github.io/tags/Hexo/</loc>
-    <lastmod>2021-01-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wzxiaa.github.io/tags/Queue/</loc>
+    <loc>https://wzxiaa.github.io/tags/Set/</loc>
     <lastmod>2021-01-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -109,7 +109,7 @@
   </url>
   
   <url>
-    <loc>https://wzxiaa.github.io/tags/Set/</loc>
+    <loc>https://wzxiaa.github.io/tags/Queue/</loc>
     <lastmod>2021-01-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
