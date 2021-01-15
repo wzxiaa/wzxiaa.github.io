@@ -20,15 +20,20 @@
     var CONFIG = {"hostname":"wzxiaa.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Wzxiaa&#39;s Blog">
-<meta property="og:url" content="https://wzxiaa.github.io/tags/Map/">
+  <meta name="description" content="JavaScript is a dynamic programming language which means that operations otherwise done at the compile-time can be done at run-time. JavaScript is a loosely typed language as well. Variables in JavaSc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript Data Types and Variables">
+<meta property="og:url" content="https://wzxiaa.github.io/2021/javascript-basics/">
 <meta property="og:site_name" content="Wzxiaa&#39;s Blog">
+<meta property="og:description" content="JavaScript is a dynamic programming language which means that operations otherwise done at the compile-time can be done at run-time. JavaScript is a loosely typed language as well. Variables in JavaSc">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-15T03:38:20.000Z">
+<meta property="article:modified_time" content="2021-01-15T04:35:49.300Z">
 <meta property="article:author" content="Wzxiaa">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://wzxiaa.github.io/tags/Map/">
+<link rel="canonical" href="https://wzxiaa.github.io/2021/javascript-basics/">
 
 
 <script id="page-configurations">
@@ -36,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Tag: Map | Wzxiaa's Blog</title>
+  <title>JavaScript Data Types and Variables | Wzxiaa's Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KECC7YCGRF"></script>
     <script>
@@ -185,51 +190,110 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">Map
-          <small>Tag</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://wzxiaa.github.io/2021/javascript-basics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.JPG">
+      <meta itemprop="name" content="Wzxiaa">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wzxiaa's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaScript Data Types and Variables
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-14 22:38:20 / Modified: 23:35:49" itemprop="dateCreated datePublished" datetime="2021-01-14T22:38:20-05:00">2021-01-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript-Road-Map/" itemprop="url" rel="index"><span itemprop="name">JavaScript Road Map</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="firestore-visitors-count"></span>
+            </span><br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>269</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <p>JavaScript is a <strong><em>dynamic programming language</em></strong> which means that operations otherwise done at the compile-time can be done at run-time. JavaScript is a <strong><em>loosely typed</em></strong> language as well. Variables in JavaScript are not directly associated with any particular value type and any variables can be assigned values of <strong><em>all types</em></strong>. </p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-12-11T18:17:39-05:00"
-              content="2020-12-11">
-          12-11
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/java-collections-map/" itemprop="url">
-            <span itemprop="name">Java Map 集合工具类三(Map)</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/java-collections-map/" rel="prev" title="Java Map 集合工具类三(Map)">
+      <i class="fa fa-chevron-left"></i> Java Map 集合工具类三(Map)
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 

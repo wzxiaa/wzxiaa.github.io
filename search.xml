@@ -1,56 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Build Blog with Hexo + Github + NexT</title>
-    <url>/2020/hello-world/</url>
-    <content><![CDATA[<p>This is my very first blog post on how to build a blog site powered by Github.io, Hexo and NexT. It won’t take even 10 minutes to set things up and running. It is fairly simple and easy to maintain. Let’s get started!</p>
-<a id="more"></a>
-
-<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><h3 id="Install-Node-js-amp-npm-with-Homebrew"><a href="#Install-Node-js-amp-npm-with-Homebrew" class="headerlink" title="Install Node.js &amp; npm with Homebrew"></a>Install Node.js &amp; npm with Homebrew</h3><p>More info: <a href="https://nodejs.org/en/download/package-manager/">Node.js</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ brew install node</span><br></pre></td></tr></table></figure>
-
-<h3 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install <a href="https://hexo.io/docs/">Hexo</a></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<h3 id="Initialize-Hexo-Blog-project"><a href="#Initialize-Hexo-Blog-project" class="headerlink" title="Initialize Hexo Blog project"></a>Initialize Hexo Blog project</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init hexo-site</span><br><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<h3 id="Install-Theme-NexT"><a href="#Install-Theme-NexT" class="headerlink" title="Install Theme - NexT"></a>Install Theme - <a href="https://theme-next.js.org/docs/getting-started/">NexT</a></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ ls</span><br><span class="line">_config.yml  node_modules  package-lock.json  package.json  scaffolds  <span class="built_in">source</span>  themes</span><br><span class="line"></span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="Github-io"><a href="#Github-io" class="headerlink" title="Github.io"></a>Github.io</h2><h3 id="Create-a-repository-on-Github-with-name-username-github-io"><a href="#Create-a-repository-on-Github-with-name-username-github-io" class="headerlink" title="Create a repository on Github with name {username}.github.io:"></a>Create a repository on Github with name {username}.github.io:</h3><p><img src="/2020/hello-world/github.png" alt="github"></p>
-<h3 id="Install-hexo-git-plugin"><a href="#Install-hexo-git-plugin" class="headerlink" title="Install hexo git plugin"></a>Install hexo git plugin</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><h3 id="Deploy-on-Github"><a href="#Deploy-on-Github" class="headerlink" title="Deploy on Github"></a>Deploy on Github</h3><p>Modify the <code>deploy</code> in  <code>hexo-site/_config.yml</code> file:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/&#123;username&#125;/&#123;username&#125;.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
-<h3 id="Set-NexT-as-Theme"><a href="#Set-NexT-as-Theme" class="headerlink" title="Set NexT as Theme"></a>Set NexT as Theme</h3><p>Again, modify the <code>theme</code> in the same <code>hexo-site/_config.yml</code> file</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>Now you can access the local bog site at <a href="http://localhost:4000/">http:localhost:4000</a></p>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<p>Now your project has been deployed to Github repository and you can access your blog site at <a href="%7Busername%7D.github.io">{username}.github.io</a></p>
-<h2 id="Additional-Information"><a href="#Additional-Information" class="headerlink" title="Additional Information"></a>Additional Information</h2><p>Now you are ready to start working on the blog. More Hexo configuration guide can be found at:</p>
-<p><a href="https://hexo.io/docs/configuration.html">https://hexo.io/docs/configuration.html</a></p>
-<p>Documentation for NexT theme setting can be found at: </p>
-<p><a href="https://theme-next.js.org/docs/theme-settings/">https://theme-next.js.org/docs/theme-settings/</a></p>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java Collections.List 集合工具类一(List)</title>
     <url>/2020/java-collections-list/</url>
     <content><![CDATA[<p>Java Collections Framework is one of the most essential Java API. The API provides implementations of standard data structure in Java-like linked list, set, stack, queue, hash table, priority queue and others. A <code>collection</code> represents a single unit of objects. The <code>collection framework</code> represents a unified architecture for storing and manipulating a group of objects</p>
@@ -152,6 +102,56 @@
         <tag>Java Basics</tag>
         <tag>Collections</tag>
         <tag>List</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Build Blog with Hexo + Github + NexT</title>
+    <url>/2020/hello-world/</url>
+    <content><![CDATA[<p>This is my very first blog post on how to build a blog site powered by Github.io, Hexo and NexT. It won’t take even 10 minutes to set things up and running. It is fairly simple and easy to maintain. Let’s get started!</p>
+<a id="more"></a>
+
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><h3 id="Install-Node-js-amp-npm-with-Homebrew"><a href="#Install-Node-js-amp-npm-with-Homebrew" class="headerlink" title="Install Node.js &amp; npm with Homebrew"></a>Install Node.js &amp; npm with Homebrew</h3><p>More info: <a href="https://nodejs.org/en/download/package-manager/">Node.js</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ brew install node</span><br></pre></td></tr></table></figure>
+
+<h3 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install <a href="https://hexo.io/docs/">Hexo</a></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h3 id="Initialize-Hexo-Blog-project"><a href="#Initialize-Hexo-Blog-project" class="headerlink" title="Initialize Hexo Blog project"></a>Initialize Hexo Blog project</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init hexo-site</span><br><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h3 id="Install-Theme-NexT"><a href="#Install-Theme-NexT" class="headerlink" title="Install Theme - NexT"></a>Install Theme - <a href="https://theme-next.js.org/docs/getting-started/">NexT</a></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ ls</span><br><span class="line">_config.yml  node_modules  package-lock.json  package.json  scaffolds  <span class="built_in">source</span>  themes</span><br><span class="line"></span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Github-io"><a href="#Github-io" class="headerlink" title="Github.io"></a>Github.io</h2><h3 id="Create-a-repository-on-Github-with-name-username-github-io"><a href="#Create-a-repository-on-Github-with-name-username-github-io" class="headerlink" title="Create a repository on Github with name {username}.github.io:"></a>Create a repository on Github with name {username}.github.io:</h3><p><img src="/2020/hello-world/github.png" alt="github"></p>
+<h3 id="Install-hexo-git-plugin"><a href="#Install-hexo-git-plugin" class="headerlink" title="Install hexo git plugin"></a>Install hexo git plugin</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><h3 id="Deploy-on-Github"><a href="#Deploy-on-Github" class="headerlink" title="Deploy on Github"></a>Deploy on Github</h3><p>Modify the <code>deploy</code> in  <code>hexo-site/_config.yml</code> file:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/&#123;username&#125;/&#123;username&#125;.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
+<h3 id="Set-NexT-as-Theme"><a href="#Set-NexT-as-Theme" class="headerlink" title="Set NexT as Theme"></a>Set NexT as Theme</h3><p>Again, modify the <code>theme</code> in the same <code>hexo-site/_config.yml</code> file</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>Now you can access the local bog site at <a href="http://localhost:4000/">http:localhost:4000</a></p>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>Now your project has been deployed to Github repository and you can access your blog site at <a href="%7Busername%7D.github.io">{username}.github.io</a></p>
+<h2 id="Additional-Information"><a href="#Additional-Information" class="headerlink" title="Additional Information"></a>Additional Information</h2><p>Now you are ready to start working on the blog. More Hexo configuration guide can be found at:</p>
+<p><a href="https://hexo.io/docs/configuration.html">https://hexo.io/docs/configuration.html</a></p>
+<p>Documentation for NexT theme setting can be found at: </p>
+<p><a href="https://theme-next.js.org/docs/theme-settings/">https://theme-next.js.org/docs/theme-settings/</a></p>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -330,6 +330,18 @@
         <tag>Java Basics</tag>
         <tag>Collections</tag>
         <tag>Queue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript Data Types and Variables</title>
+    <url>/2021/javascript-basics/</url>
+    <content><![CDATA[<p>JavaScript is a <strong><em>dynamic programming language</em></strong> which means that operations otherwise done at the compile-time can be done at run-time. JavaScript is a <strong><em>loosely typed</em></strong> language as well. Variables in JavaScript are not directly associated with any particular value type and any variables can be assigned values of <strong><em>all types</em></strong>. </p>
+]]></content>
+      <categories>
+        <category>JavaScript Road Map</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>

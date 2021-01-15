@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wzxiaa.github.io/2021/javascript-basics/</loc>
+    
+    <lastmod>2021-01-15</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wzxiaa.github.io/2020/java-collections-list/</loc>
     
     <lastmod>2021-01-14</lastmod>
@@ -53,57 +60,64 @@
 
   <url>
     <loc>https://wzxiaa.github.io/</loc>
-    <lastmod>2021-01-14</lastmod>
+    <lastmod>2021-01-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://wzxiaa.github.io/tags/Hexo/</loc>
-    <lastmod>2021-01-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://wzxiaa.github.io/tags/Java-Basics/</loc>
-    <lastmod>2021-01-14</lastmod>
+    <lastmod>2021-01-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://wzxiaa.github.io/tags/Collections/</loc>
-    <lastmod>2021-01-14</lastmod>
+    <lastmod>2021-01-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://wzxiaa.github.io/tags/List/</loc>
-    <lastmod>2021-01-14</lastmod>
+    <lastmod>2021-01-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzxiaa.github.io/tags/Hexo/</loc>
+    <lastmod>2021-01-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://wzxiaa.github.io/tags/Queue/</loc>
-    <lastmod>2021-01-14</lastmod>
+    <lastmod>2021-01-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzxiaa.github.io/tags/JavaScript/</loc>
+    <lastmod>2021-01-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://wzxiaa.github.io/tags/Set/</loc>
-    <lastmod>2021-01-14</lastmod>
+    <lastmod>2021-01-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://wzxiaa.github.io/tags/Map/</loc>
-    <lastmod>2021-01-14</lastmod>
+    <lastmod>2021-01-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -112,7 +126,14 @@
   
   <url>
     <loc>https://wzxiaa.github.io/categories/Java-Road-Map/</loc>
-    <lastmod>2021-01-14</lastmod>
+    <lastmod>2021-01-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wzxiaa.github.io/categories/JavaScript-Road-Map/</loc>
+    <lastmod>2021-01-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
